@@ -1,9 +1,9 @@
-//#5B605F - panel boczny, nawigacja
-//#4a4a49 - nagłówek, , kolor tekstu w kolumnach
-//#FF6600 - przyciski, wyróżnienia, nagłówki ekranów
-//#FFFFFA - kolor tła ekranów
-//#3498DB - kolor wiadomości typu info,
-//#FFB03B - kolor wiadomości typu warning
-//#468966 - kolor wiadomości typu success
-//#BD4932 - kolor ikony kosza
-//#A1A194 - kolor tekstu z wierszy w tabelach, ikony rozszerzonych funkcji
+$color-side: #5B605F;            // panel boczny, nawigacja
+$color-headline: #4a4a49;        // nagłówek, , kolor tekstu w kolumnach
+$color-buttons: #FF6600;         // przyciski, wyróżnienia, nagłówki ekranów
+$color-background: #FFFFFA;      // kolor tła ekranów
+$color-message-info: #3498DB;    // kolor wiadomości typu info,
+$color-message-warning: #FFB03B; // kolor wiadomości typu warning
+$color-message-success: #468966; // kolor wiadomości typu success
+$color-icon-bucket: #BD4932;     // kolor ikony kosza
+$color-text-rows: #A1A194;       // kolor tekstu z wierszy w tabelach, ikony rozszerzonych funkcji
