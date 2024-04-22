@@ -1,7 +1,7 @@
-@import "normalize";
-@import "functions";
-@import "colours";
-@import "fonts";
+@import "../normalize";
+@import "../functions";
+@import "../colours";
+@import "../fonts";
 .header__nav {
 display: flex;
   flex-direction: row;
