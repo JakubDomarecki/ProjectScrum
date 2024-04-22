@@ -1,10 +1,12 @@
 @import "normalize";
 @import "fonts";
 @import "colours";
+@import "carousel";
 @import "layout/header";
 @import "layout/call-to-action";
 @import "components/buttons";
 @import "layout/features";
+
 
 
 body {
@@ -22,4 +24,5 @@ h2 {
   font-size: 2rem;
   text-align: center;
 }
+
 
