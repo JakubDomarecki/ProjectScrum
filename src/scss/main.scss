@@ -1,10 +1,11 @@
 @import "normalize";
 @import "fonts";
 @import "colours";
-
+@import "layout/call-to-action";
+@import "components/buttons";
 
 body {
-  background-color: #bada55;
+  background-color: $color-background;
 }
 
 .container{
