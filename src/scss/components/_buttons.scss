@@ -1,0 +1,11 @@
+@import "../colours";
+@import "../fonts";
+
+.button__orange--cta {
+  background-color: $color-buttons;
+  color: $color-background;
+  border: none;
+  padding: 7px 14px 7px 14px;
+  margin-bottom: 16px;
+//  font-family: $;
+}

@@ -8,8 +8,19 @@
     <link rel="stylesheet" href="scss/main.scss" />
   </head>
   <body>
+  <div class="container">
     <header>
-      <h1>ZaplanujJedzonko.pl</h1>
+      <div class="header__nav">
+      <div class="header__logo">
+      <h1>Zaplanuj <span>Jedzonko</span></h1>
+      </div>
+        <div class="header__btns">
+     <button class="header__button"><a href="#"> ZAPLANUJ POSIŁKI!</a></button>
+     <button class="header__button"><a href="#"> DLACZEGO WARTO?</a></button>
+     <button class="header__button"><a href="#"> O MNIE</a></button>
+     <button class="header__button"><a href="#"> KONTAKT</a></button>
+        </div>
+      </div>
     </header>
     <section>
       <div class="slider">
@@ -22,8 +33,14 @@
         <button id="nextButton" class="next">&#10095;</button>
       </div>
     </section>
-    <section>
-      <!-- CTA + button -->
+    <section class="call-to-action">
+      <div class="call-to-action__left">
+      <h3>Lorem ipsum dolor sit amet</h3>
+      <p>consectetur adipisicing elit. Assumenda delectus ducimus earum fugit iste labore minima, quae quasi repellat similique.</p>
+      </div>
+      <div class="call-to-action__right">
+      <a href="index.html"><button class="button__orange--cta">Lorem ipsum</button></a>
+      </div>
     </section>
     <section>
       <!-- features -->
@@ -42,5 +59,6 @@
     </footer>
 
     <script type="module" src="js/index.js"></script>
+  </div>
   </body>
 </html>
