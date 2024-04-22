@@ -10,8 +10,20 @@ display: flex;
 
   font-family: $text-font;
 }
-.header__logo {
 
+h1{
+  font-family: $text-font;
+}
+body{
+  background-color: #292F32;
+}
+#first{
+  font-weight:100;
+  color: white;
+}
+#second{
+  color:#E58A20;
+  font-weight: 700;
 }
 .header__btns {
   display: flex;

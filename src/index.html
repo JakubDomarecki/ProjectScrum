@@ -2,6 +2,10 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Zaplanuj Jedzonko</title>
@@ -11,9 +15,10 @@
   <div class="container">
     <header>
       <div class="header__nav">
-      <div class="header__logo">
-      <h1>Zaplanuj <span>Jedzonko</span></h1>
-      </div>
+        <h1>
+          <span id="first">Zaplanuj</span>
+          <span id="second">Jedzonko</span>
+        </h1>
         <div class="header__btns">
      <button class="header__button"><a href="#"> ZAPLANUJ POSIŁKI!</a></button>
      <button class="header__button"><a href="#"> DLACZEGO WARTO?</a></button>
@@ -102,7 +107,7 @@
         </div>
         <!-- copyright -->
         <div class="footer__copyright">
-          Copyright <span> Zaplanuj Jedzonko.pl  </span>
+          Copyright<span  class="footer__log">  Zaplanuj  Jedzonko.pl  </span>
          </div>
       </footer>
     </footer>

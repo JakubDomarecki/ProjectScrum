@@ -7,7 +7,7 @@ footer {
   background-color: $color-side;
   color: white;
   font-family: $text-font;
-
+ padding-top: 1rem;
 }
 
 .footer__cols {
@@ -30,6 +30,7 @@ footer {
   background-color: $color-headline;
   display: flex;
   justify-content: center;
+  padding: 1rem;
 }
 
 .footer__shit {
@@ -62,7 +63,7 @@ footer {
 
 }
 .footer__fb__color {
-  color: white;
+
 }
 .footer__text__inp {
 
@@ -70,4 +71,8 @@ footer {
 }
 .footer__form {
   padding-top: 1rem;
+}
+.footer__log  {
+  color: #FF6600;
+  font-family: $text-font;
 }
