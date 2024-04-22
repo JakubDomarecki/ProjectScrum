@@ -1,0 +1,73 @@
+@import "colours";
+@import "fonts";
+@import "normalize";
+
+
+footer {
+  background-color: $color-side;
+  color: white;
+  font-family: $text-font;
+
+}
+
+.footer__cols {
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding-inline: 1rem;
+.footer__ul {
+
+  padding-left: 1rem;
+}
+}
+.footer__text_h2{
+ padding-top: 1rem;
+}
+
+.footer__copyright {
+  background-color: $color-headline;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__shit {
+  display: flex;
+  margin-top: 0.6rem;
+  align-items: center;
+}
+
+.footer__fb {
+
+ width: 2rem;
+  height: 2rem;
+
+}
+.footer__twitter {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 2rem;
+
+}
+.footer_ig {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 2rem;
+
+}
+.footer__btn {
+  background-color: $color-buttons;
+  color: white;
+
+}
+.footer__fb__color {
+  color: white;
+}
+.footer__text__inp {
+
+
+}
+.footer__form {
+  padding-top: 1rem;
+}

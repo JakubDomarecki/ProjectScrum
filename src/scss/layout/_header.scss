@@ -26,7 +26,8 @@ display: flex;
   border: none;
 }
 a:hover {
-  color: #FF6600;
+
+  color: $color-buttons;
 }
 
 span {
