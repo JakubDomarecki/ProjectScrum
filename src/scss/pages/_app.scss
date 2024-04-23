@@ -1,0 +1,35 @@
+@import "colours";
+@import "functions";
+//@use "sass:math";
+
+body {
+  background-image: url('../images/background.png');
+  background-size: contain;
+  background-repeat: repeat;
+}
+
+.nav__sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 79.66px;
+  left: 0;
+  background-color: $color-side;
+}
+
+.nav__sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav__sidebar ul li a {
+  display: block;
+  padding: 20px;
+  color: $color-background;
+  text-decoration: none;
+}
+
+.user__icon {
+  height: 2em;
+  width: auto;
+}
