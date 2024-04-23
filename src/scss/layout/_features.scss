@@ -1,6 +1,7 @@
 @import "../functions";
 @import "../fonts";
 @import "../fonts";
+@import "header";
 //@use "sass:math";
 
 .features {
@@ -22,5 +23,4 @@
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  //font-family: $;
 }
