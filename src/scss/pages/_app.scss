@@ -1,12 +1,6 @@
-@import "colours";
-@import "functions";
+@import "../colours";
+@import "../functions";
 //@use "sass:math";
-
-body {
-  background-image: url('../images/background.png');
-  background-size: contain;
-  background-repeat: repeat;
-}
 
 .nav__sidebar {
   height: 100%;
@@ -33,3 +27,16 @@ body {
   height: 2em;
   width: auto;
 }
+
+.app__content {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 79.66px;
+  left: 250px;
+  background-image: url('../../images/background.png');
+  background-size: contain;
+  background-repeat: repeat;
+}
+
+//fix2
