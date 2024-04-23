@@ -10,69 +10,55 @@ const recipesInput = document.querySelector('.recipes_input');
 const headerName = document.querySelector('.header_name');
 
 // | "pulpit" >
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
 
-    let currentUrl = window.location.pathname.split('/').pop();
-    // console.log(currentUrl);
-    let links = document.querySelectorAll('.nav__sidebar__button');
-    // console.log(links);
-    links.forEach(function(link) {
-        let href = link.getAttribute('href');
-        if (href === currentUrl) {
-            link.classList.add('active');
-        }
-    });
+  let currentUrl = window.location.pathname.split('/').pop();
+  // console.log(currentUrl);
+  let links = document.querySelectorAll('.nav__sidebar__button');
+  // console.log(links);
+  links.forEach(function(link) {
+    let href = link.getAttribute('href');
+    if (href === currentUrl) {
+      link.classList.add('active');
+    }
+  });
 });
 
 
-dodajPrzepis.addEventListener('click',function (event) {
-pokazPrzepis.classList.toggle('ukrytePrzepis');
-} );
+dodajPrzepis.addEventListener('click', function(event) {
+  pokazPrzepis.classList.toggle('ukrytePrzepis');
+});
 
 
-let savedName = localStorage.getItem("savedName");
+let savedName = localStorage.getItem('savedName');
 
 
 if (savedName) {
-    schowajWelcome.classList.add('ukrtyeForm');
-    pokazGuziki.classList.remove('ukryteMiddle');
-    headerName.innerText = savedName;
+  schowajWelcome.classList.add('ukrtyeForm');
+  pokazGuziki.classList.remove('ukryteMiddle');
+  headerName.innerText = savedName;
 } else {
-    warning.classList.remove('ukrtyeForm');
+  warning.classList.remove('ukrtyeForm');
 }
 
 
+pokazDashboard.addEventListener('click', function(event) {
+  const userName = recipesInput.value;
 
-pokazDashboard.addEventListener('click', function (event) {
-    const userName = recipesInput.value;
+  if (userName === '') {
+    warning.classList.remove('ukrtyeForm');
+  } else {
 
-    if (userName === '') {
-        warning.classList.remove('ukrtyeForm');
-    } else {
+    localStorage.setItem('savedName', userName);
+    savedName = userName;
 
-        localStorage.setItem('savedName', userName);
-        savedName = userName;
-
-        schowajWelcome.classList.add('ukrtyeForm');
-        pokazGuziki.classList.remove('ukryteMiddle');
-        headerName.innerText = savedName;
-    }
+    schowajWelcome.classList.add('ukrtyeForm');
+    pokazGuziki.classList.remove('ukryteMiddle');
+    headerName.innerText = savedName;
+  }
 });
 
 
-
-
-
-dodajPlan.addEventListener('click', function (event) {
-pokazPlan.classList.toggle('ukrytePlan');
+dodajPlan.addEventListener('click', function(event) {
+  pokazPlan.classList.toggle('ukrytePlan');
 });
-
-
-
-
-
-
-
-
-
-

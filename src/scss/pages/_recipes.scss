@@ -1,0 +1,46 @@
+@use "sass:math";
+@import "../variables/colours";
+
+.app_container {
+  background: $color-background;
+  border: 1px dotted;
+  margin-top: 1rem;
+  margin-left: 3rem;
+  width: calc(100vw - (6rem + 250px));
+  height: 100%;
+}
+
+.recipes__list__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 2.5rem 1rem 2.5rem;
+  border-bottom: 2px solid $color-text-rows;
+  text-transform: uppercase;
+  & h2 {
+    color: $color-buttons;
+  }
+}
+
+.icon__add {
+  height: 2rem;
+}
+
+table {
+  width: calc(100% - 6rem);
+  margin-left: 3rem;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-top: 1px solid $color-text-rows;
+  border-bottom: 1px solid $color-text-rows;
+  padding: 8px;
+  text-align: left;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
