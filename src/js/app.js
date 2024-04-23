@@ -9,11 +9,25 @@ const warning = document.querySelector('.recipes_p');
 const recipesInput = document.querySelector('.recipes_input');
 const headerName = document.querySelector('.header_name');
 
+// | "pulpit" >
+document.addEventListener("DOMContentLoaded", function() {
+
+    let currentUrl = window.location.pathname.split('/').pop();
+    // console.log(currentUrl);
+    let links = document.querySelectorAll('.nav__sidebar__button');
+    // console.log(links);
+    links.forEach(function(link) {
+        let href = link.getAttribute('href');
+        if (href === currentUrl) {
+            link.classList.add('active');
+        }
+    });
+});
+
+
 dodajPrzepis.addEventListener('click',function (event) {
 pokazPrzepis.classList.toggle('ukrytePrzepis');
 } );
-
-
 
 
 let savedName = localStorage.getItem("savedName");
@@ -52,6 +66,7 @@ pokazDashboard.addEventListener('click', function (event) {
 dodajPlan.addEventListener('click', function (event) {
 pokazPlan.classList.toggle('ukrytePlan');
 });
+
 
 
 
