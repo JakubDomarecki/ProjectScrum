@@ -1,36 +1,51 @@
 <!doctype html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Zaplanuj Jedzonko</title>
-    <link rel="stylesheet" href="scss/main.scss" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Zaplanuj Jedzonko</title>
+  <link rel="stylesheet" href="scss/main.scss" />
+</head>
+<body>
 
-  <header>
-  <div class="header__nav">
-    <h1>
-      <span id="first">Zaplanuj</span>
-      <span id="second">Jedzonko</span>
-    </h1>
+<header>
+  <div class="header__nav header__nav-app">
+
+      <h1 class="logo">
+        <a href="index.html">
+        <span id="first">Zaplanuj</span>
+        <span id="second">Jedzonko</span>
+        </a>
+      </h1>
+
     <div class="header__btns">
+
       <button class="header__button"><a href="#" class="header_name">Imię</a></button>
-      <img class="user__icon" src="icons/user-solid.svg" alt="User">
+     <img class="user__icon" src="icons/circle-user-solid.svg" alt="User">
+     
     </div>
   </div>
-  </header>
+</header>
 
-  <nav class="nav__sidebar">
-    <ul>
-      <li><a href="index.html">Pulpit</a></li>
-      <li><a href="recipes.html">Przepisy</a></li>
-      <li><a href="schedules.html">Plany</a></li>
-    </ul>
-  </nav>
-
-  <main class="app__content">
+<nav class="nav__sidebar">
+  <ul>
+    <li>
+      <a class="nav__sidebar__button" href="app.html">Pulpit</a>
+    </li>
+    <li>
+      <a class="nav__sidebar__button" href="recipes.html">Przepisy</a>
+    </li>
+    <li>
+    <a class="nav__sidebar__button" href="schedules.html">Plany</a>
+    </li>
+  </ul>
+</nav>
+  
+<main class="app__content">
       <div id="recipes_form" class="recipes_form ">
         <h2 class="recipes_h2">Witaj,</h2>
         <h3 class="recipes_h3">Wygląda na to, że jesteś tutaj <br> Pierwszy raz!</h3>
@@ -41,32 +56,42 @@
       </div>
 
     <div id="middle" class="middle ukryteMiddle">
-      <div class="dashboard">
-        <div class="dashboard__srodek">
-      <button id="left" class="left">
-        <div class="icon">
-          <img src="icons/plus-solid.svg" alt="">
 
-        </div>
-        <h2>Dodaj przepis</h2>
-      </button>
-      <button id="right" class="left">
-        <div class="icon">
-          <img src="icons/plus-solid.svg" alt="">
+          <div class="dashboard__srodek">
+        <button id="left" class="left">
+          <div class="icon">
+            <img src="icons/plus-solid.svg" alt="">
 
-        </div>
-        <h2>dodaj plan</h2>
-      </button>
-        <div class="right__3">
-          <div class="right__31">Masz już 99 przepisów, nieźle!</div>
-          <div class="right__32">Pamiętaj, aby dodać plan!</div>
-          <div class="right__33">
-            Świetnie że jesteś! Udanego planowania i smaczego! :)</div>
-        </div>
-        </div>
-        <div class="plan">
-    weweqwewewasdsadasdadasd
-        </div>
+          </div>
+          <h2>Dodaj przepis</h2>
+        </button>
+        <button id="right" class="left">
+          <div class="icon">
+            <img src="icons/plus-solid.svg" alt="">
+
+          </div>
+          <h2>dodaj plan</h2>
+        </button>
+          <div class="right__3">
+            <div class="right__31"><img class="info" src="icons/circle-info-solid.svg" alt=""><div class="info_text"> Masz już 99 przepisów, nieźle!</div> <button class="info_btn">x</button></div>
+            <div class="right__32"><img class="alert" src="icons/circle-exclamation-solid.svg" alt=""><div class="alert_text"> Pamiętaj, aby dodać plan!</div> <button class="alert_btn">x</button></div>
+            <div class="right__33"><img class="check" src="icons/circle-check-solid.svg" alt=""><div class="check_text">Świetnie że jesteś! Udanego planowania i smaczego! :)</div> <button class="check_btn">x</button></div>
+          </div>
+
+            <div  class="pokazsiekurwa">
+              <div class="twój__plan">Twój plan na {nr_tygodnia} tydzień: </div>
+
+             <div class="dni_tygodnia"><div class="plan_item">poniedzialek</div> <div class="plan_item" >wtorek</div> <div class="plan_item" >sroda</div> <div class="plan_item">czwartek</div> <div class="plan_item">piatek</div> <div class="plan_item">sobota</div><div class="plan_item"> niedziela</div></div>
+             <div class="sniadanie"><div class="plan_item">sniadanie</div> <div class="plan_item">sniadanie</div> <div class="plan_item">sniadanie</div> <div class="plan_item">sniadanie</div> <div class="plan_item">sanidanie</div> <div class="plan_item">sniadanie</div> <div class="plan_item">sniadanie</div></div>
+               <div class="drugie_sniadanie"><div class="plan_item">drugie<br> sniadanie</div>  <div class="plan_item">drugie<br> snidanie</div> <div class="plan_item">drugie<br> snidadanie</div> <div class="plan_item">drugie<br> snidadanie</div> <div class="plan_item">drugie<br> snidadanie</div> <div class="plan_item">drugie<br> snidadanie</div> <div class="plan_item">drugie <br>snidadanie</div></div>
+               <div class="zupa"><div class="plan_item">zupa</div> <div class="plan_item">zupa</div> <div class="plan_item">zupa</div> <div class="plan_item">zupa</div> <div class="plan_item">zupa</div> <div class="plan_item">zupa</div> <div class="plan_item">zupa</div></div>
+               <div class="drugie_danie"><div class="plan_item">drugie<br> danie</div> <div class="plan_item">drugie<br> danie</div> <div class="plan_item">drugie<br> danie</div> <div class="plan_item">drugie<br> danie</div> <div class="plan_item">drugie <br>danie</div> <div class="plan_item">drugie <br>danie</div> <div class="plan_item">drugie <br>danie</div></div>
+               <div class="kolacja"><div class="plan_item">kolacja</div> <div class="plan_item">kolacja</div> <div class="plan_item">kolacja</div> <div class="plan_item">kolacja</div> <div class="plan_item">kolacja</div> <div class="plan_item">kolacja</div> <div class="plan_item">kolacja</div></div>
+              <div class="next-prev"><button>poprzedni</button> <button>nastepny</button></div>
+            </div>
+
+          </div>
+
     </div>
 
 
@@ -77,9 +102,8 @@
     <div id="plan" class="plan ukrytePlan">
 
     </div>
-    </div>
-  </main>
 
+  </main>
 
     <script type="module" src="js/app.js"></script>
   </body>

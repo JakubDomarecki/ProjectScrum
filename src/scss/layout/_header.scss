@@ -2,6 +2,8 @@
 @import "../functions";
 @import "../colours";
 @import "../fonts";
+@import "../components/logo";
+
 .header__nav {
 display: flex;
   flex-direction: row;
@@ -10,20 +12,10 @@ display: flex;
   font-family: $text-font;
 }
 
-h1{
-  font-family: $text-font;
-}
 body{
   background-color: #292F32;
 }
-#first{
-  font-weight:100;
-  color: white;
-}
-#second{
-  color:#E58A20;
-  font-weight: 700;
-}
+
 .header__btns {
   display: flex;
   justify-content: space-evenly;
@@ -36,15 +28,10 @@ body{
   background-color: $color-headline;
   border: none;
 }
-a:hover {
-
+.header__button a:hover {
   color: $color-buttons;
 }
 
-span {
-  color: #FF6600;
-  font-family: $logo-font;
-}
 a {
   text-decoration: none;
   color: white;

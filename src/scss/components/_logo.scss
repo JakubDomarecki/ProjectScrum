@@ -1,0 +1,14 @@
+@import "../fonts";
+@import "../colours";
+
+.logo {
+  font-family: $logo-font;
+}
+#first{
+  font-weight:100;
+  color: white;
+}
+#second{
+  color:#E58A20;
+  font-weight: 700;
+}
