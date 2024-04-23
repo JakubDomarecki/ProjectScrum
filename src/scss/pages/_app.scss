@@ -1,6 +1,15 @@
 @import "../colours";
 @import "../functions";
+@import "../components/logo";
+@import "../fonts";
+
 //@use "sass:math";
+
+
+.header__nav-app {
+  justify-content: space-between;
+  padding: 0 2rem;
+}
 
 .nav__sidebar {
   height: 100%;
@@ -14,14 +23,25 @@
 .nav__sidebar ul {
   list-style-type: none;
   padding: 0;
+  margin-block: 0;
+  padding-inline-start: 0;
 }
 
 .nav__sidebar ul li a {
   display: block;
-  padding: 20px;
-  color: $color-background;
+  padding: 1rem 2rem;
   text-decoration: none;
+  text-align: left;
+  border-left: 0.5rem solid $color-buttons;
 }
+
+
+.nav__sidebar__button {
+  font-weight: 400;
+  font-family: $text-font;
+  font-size: 1.5rem;
+}
+
 
 .user__icon {
   height: 2em;
@@ -38,5 +58,3 @@
   background-size: contain;
   background-repeat: repeat;
 }
-
-//fix2
