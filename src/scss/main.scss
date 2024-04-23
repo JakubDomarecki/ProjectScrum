@@ -1,12 +1,12 @@
 @import "normalize";
-@import "fonts";
-@import "colours";
-@import "carousel";
+@import "variables/fonts";
+@import "variables/colours";
+@import "layout/carousel";
 @import "layout/header";
 @import "layout/call-to-action";
 @import "components/buttons";
 @import "layout/features";
-@import "footer";
+@import "layout/footer";
 @import "pages/app";
 @import "recipes-form";
 
