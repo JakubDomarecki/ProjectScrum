@@ -1,6 +1,6 @@
 @import "colours";
 @import "fonts";
-
+@import "dodaj";
 
 .recipes_form{
   box-sizing: border-box;
@@ -37,4 +37,7 @@
 .recipes_h3{
   font-weight: bold;
   font-size: 1.5rem;
+}
+.ukrtyeForm {
+  display: none;
 }
