@@ -1,24 +1,63 @@
-const dodajPrzepis = document.querySelector('#left')
-const dodajPlan = document.querySelector('#right')
-const pokazPrzepis = document.querySelector('#przepis')
-const pokazPlan = document.querySelector('#plan')
-const pokazDashboard = document.querySelector('#recipes_button')
-const pokazGuziki = document.querySelector('#middle')
-const schowajWelcome = document.querySelector('#recipes_form')
-dodajPrzepis.addEventListener('click',function (event) {
+const dodajPrzepis = document.querySelector('#left');
+const dodajPlan = document.querySelector('#right');
+const pokazPrzepis = document.querySelector('#przepis');
+const pokazPlan = document.querySelector('#plan');
+const pokazDashboard = document.querySelector('#recipes_button');
+const pokazGuziki = document.querySelector('#middle');
+const schowajWelcome = document.querySelector('#recipes_form');
+const warning = document.querySelector('.recipes_p');
+const recipesInput = document.querySelector('.recipes_input');
+const headerName = document.querySelector('.header_name');
 
-pokazPrzepis.classList.toggle('ukrytePrzepis')
-} )
+dodajPrzepis.addEventListener('click',function (event) {
+pokazPrzepis.classList.toggle('ukrytePrzepis');
+} );
+
+
+
+
+let savedName = localStorage.getItem("savedName");
+
+
+if (savedName) {
+    schowajWelcome.classList.add('ukrtyeForm');
+    pokazGuziki.classList.remove('ukryteMiddle');
+    headerName.innerText = savedName;
+} else {
+    warning.classList.remove('ukrtyeForm');
+}
+
+
 
 pokazDashboard.addEventListener('click', function (event) {
-schowajWelcome.classList.add('ukrtyeForm')
-    pokazGuziki.classList.toggle('ukryteMiddle')
+    const userName = recipesInput.value;
 
-})
+    if (userName === '') {
+        warning.classList.remove('ukrtyeForm');
+    } else {
+
+        localStorage.setItem('savedName', userName);
+        savedName = userName;
+
+        schowajWelcome.classList.add('ukrtyeForm');
+        pokazGuziki.classList.remove('ukryteMiddle');
+        headerName.innerText = savedName;
+    }
+});
+
+
 
 
 
 dodajPlan.addEventListener('click', function (event) {
-pokazPlan.classList.toggle('ukrytePlan')
-})
+pokazPlan.classList.toggle('ukrytePlan');
+});
+
+
+
+
+
+
+
+
 
