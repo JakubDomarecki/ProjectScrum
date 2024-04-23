@@ -5,23 +5,23 @@
   width: 1rem;
   height: 1rem;
 }
-.robCoś {
 
-}
 
 .left {
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 12rem;
   background-color: #fff;
-  border: 0.3rem dashed $color-message-success;
+  border: 0.3rem dashed grey;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-right: 1rem;
+  margin: 2rem;
+
 
 }
+
 .icon {
   
   border: 0.3rem solid $color-message-success  ;
@@ -32,7 +32,35 @@
   justify-content: center;
   align-items: center;
 }
+.right__3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.right__31 {
 
+  height: 1rem;
+  background-color: #fff;
+  border: 0.3rem dashed grey;
+  padding: 0.9rem;
+
+}
+.right__32 {
+
+  height: 1rem;
+  background-color: #fff;
+  border: 0.3rem dashed grey;
+  padding: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.right__33 {
+  width: 50rem;
+  height: 1rem;
+  background-color: #fff;
+  border: 0.3rem dashed grey;
+  padding: 0.9rem;
+}
 button:hover {
   cursor: pointer;
 }
@@ -50,14 +78,18 @@ button:hover {
 }
 
 .middle {
-  display: flex;
+ display: flex;
   color: $color-message-success;
-  justify-content: center;
-  height:60rem;
+
+
+
   align-items: center;
 
 }
 
+.ukryteMiddle{
+  display: none;
+}
 .przepis {
   width: 200px;
   height: 200px;
@@ -74,4 +106,19 @@ display: none;
 }
 .ukrytePlan {
 display: none;
+}
+.dashboard {
+
+  display: flex;
+  padding-inline: 4rem;
+}
+.dashboard__srodek {
+  display: flex;
+
+}
+.plan {
+  width: 500px;
+  height: 200px;
+  background-color: red;
+  display: flex;
 }
