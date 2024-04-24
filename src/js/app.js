@@ -11,8 +11,28 @@ const headerName = document.querySelector('.header_name');
 const prevBtn = document.querySelector('#prev__dni')
 const nextBtn = document.querySelector('#next__dni')
 const nrTyg = document.querySelector("#nr__tygodnia")
+const closeBtn1 = document.querySelector('.info_btn')
+const closeBtn2 = document.querySelector('.alert_btn')
+const closeBtn3 = document.querySelector('.check_btn')
+const info = document.querySelector('#right__31')
+const warr = document.querySelector('#right__32')
+const check = document.querySelector('#right__33')
 // | "pulpit" >
 let counter = 0
+
+
+
+closeBtn1.addEventListener('click', function (event){
+info.classList.add('ukryteMiddle')
+})
+closeBtn2.addEventListener('click', function (event){
+warr.classList.add('ukryteMiddle')
+})
+closeBtn3.addEventListener('click', function (event){
+check.classList.add('ukryteMiddle')
+})
+
+
 
 nrTyg.innerText =  `Twój plan na  ten tydzień: `
 document.addEventListener('DOMContentLoaded', function() {
