@@ -1,7 +1,7 @@
 @use "sass:math";
 @import "../variables/colours";
 
-.app_container {
+.app__container {
   background: $color-background;
   border: 1px dotted;
   margin-top: 1rem;
