@@ -12,9 +12,19 @@ const prevBtn = document.querySelector('#prev__dni');
 const nextBtn = document.querySelector('#next__dni');
 const nrTyg = document.querySelector("#nr__tygodnia");
 const infoText = document.querySelector(".info_text");
-const recipesOverlay = document.querySelector('.app_container_hide');
-const recipesHide = document.querySelector('#app_containerHide');
-const addRecipesOverlay = document.querySelector('.add_recipes');
+const recipesOverlay = document.querySelector('.app_container_hide')
+const recipesHide =document.querySelector('#app_containerHide')
+const addRecipesOverlay = document.querySelector('.add_recipes')
+const schedulesAdd = document.querySelector(".icon__add");
+const scheduleList = document.querySelector(".lista_planow_display");
+const newSchedule = document.querySelector('.new-plan-display');
+
+schedulesAdd.addEventListener('click', function(e) {
+  scheduleList.classList.add('new-plan-display-none');
+  newSchedule.classList.remove('new-plan-display-none');
+});
+
+
 
 // pasek nawigacji, jak spada niżej to przestaje działać
 document.addEventListener('DOMContentLoaded', function() {
@@ -103,6 +113,8 @@ check.classList.add('ukryteMiddle');
 });
 
 
+nrTyg.innerText =  `Twój plan na  ten tydzień: `
+document.addEventListener('DOMContentLoaded', function() {
 
 nrTyg.innerText =  `Twój plan na  ten tydzień: `;
 
@@ -158,5 +170,8 @@ pokazDashboard?.addEventListener('click', function(event) {
 dodajPlan?.addEventListener('click', function(event) {
   pokazPlan.classList.toggle('ukrytePlan');
 });
+
+
+
 
 
