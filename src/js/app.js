@@ -12,6 +12,16 @@ const prevBtn = document.querySelector('#prev__dni')
 const nextBtn = document.querySelector('#next__dni')
 const nrTyg = document.querySelector("#nr__tygodnia")
 const infoText = document.querySelector(".info_text");
+const recipesOverlay = document.querySelector('.app_container_hide')
+const recipesHide =document.querySelector('#app_containerHide')
+const addRecipesOverlay = document.querySelector('.add_recipes')
+
+
+recipesHide.addEventListener('click', function (event) {
+  recipesOverlay.classList.add('ukryteMiddle')
+  addRecipesOverlay.classList.toggle('ukryteMiddle')
+  console.log(20)
+});
 
 
 

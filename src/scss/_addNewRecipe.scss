@@ -1,0 +1,53 @@
+@import "pages/schedules";
+@import "pages/schedules";
+
+#app_containerHide {
+  border: none;
+  background-color: transparent;
+}
+.instructions {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+.ingridients {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+
+.schedules_form_buttons{
+  margin: 1rem 2.5rem 1rem 2.5rem;
+}
+.schedules_form_name{
+  margin-bottom: 1rem;
+}
+.schedules_form_description{
+  margin-bottom: 1rem;
+}
+.schedules_label{
+  font-size: 1.5rem;
+  color: $color-headline;
+}
+.schedules_label1{
+  margin-right: 3rem;
+}
+.schedules_label2{
+  margin-right: 4.5rem;
+}
+.schedules_label3{
+  margin-right: 1rem;
+}
+.schedules_input1{
+  width: 79%;
+  padding: 5px;
+}
+.schedules_input2{
+  width: 79%;
+  padding: 5px;
+}
+.schedules_input3{
+  width: 2%;
+  padding: 5px;
+}
