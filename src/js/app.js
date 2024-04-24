@@ -12,31 +12,9 @@ const prevBtn = document.querySelector('#prev__dni');
 const nextBtn = document.querySelector('#next__dni');
 const nrTyg = document.querySelector("#nr__tygodnia");
 const infoText = document.querySelector(".info_text");
-
-
-
-
-
-recipesHide.addEventListener('click', function (event) {
-  recipesOverlay.classList.add('ukryteMiddle');
-  addRecipesOverlay.classList.toggle('ukryteMiddle');
- 
-});
-
 const recipesOverlay = document.querySelector('.app_container_hide');
-const recipesHide =document.querySelector('#app_containerHide');
+const recipesHide = document.querySelector('#app_containerHide');
 const addRecipesOverlay = document.querySelector('.add_recipes');
-const schedulesAdd = document.querySelector(".icon__add");
-const scheduleList = document.querySelector(".lista_planow_display");
-const newSchedule = document.querySelector('.new-plan-display');
-
-schedulesAdd.addEventListener('click', function(e) {
-  scheduleList.classList.add('new-plan-display-none');
-  newSchedule.classList.remove('new-plan-display-none');
-});
-
-
-
 
 // pasek nawigacji, jak spada niżej to przestaje działać
 document.addEventListener('DOMContentLoaded', function() {
@@ -51,6 +29,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+recipesHide?.addEventListener('click', function (event) {
+  recipesOverlay.classList.add('ukryteMiddle');
+  addRecipesOverlay.classList.toggle('ukryteMiddle');
+ 
+});
+
+const schedulesAdd = document.querySelector(".icon__add");
+const scheduleList = document.querySelector(".lista_planow_display");
+const newSchedule = document.querySelector('.new-plan-display');
+
+schedulesAdd?.addEventListener('click', function(event) {
+  scheduleList.classList.add('new-plan-display-none');
+  newSchedule.classList.remove('new-plan-display-none');
+});
+
 
 recipesHide?.addEventListener('click', function (event) {
   recipesOverlay.classList.add('ukryteMiddle');
@@ -83,7 +77,7 @@ function addRecipes() {
 }
 
 // Dodaj obsługę zdarzenia "click" dla elementu infoText
-infoText.addEventListener("click", function(event) {
+infoText?.addEventListener("click", function(event) {
   addRecipes();
 });
 
@@ -114,37 +108,32 @@ let counter = 0;
 
 
 
-closeBtn1.addEventListener('click', function (event){
+closeBtn1?.addEventListener('click', function (event){
 info.classList.add('ukryteMiddle');
 });
-closeBtn2.addEventListener('click', function (event){
+closeBtn2?.addEventListener('click', function (event){
 warr.classList.add('ukryteMiddle');
 });
-closeBtn3.addEventListener('click', function (event){
+closeBtn3?.addEventListener('click', function (event){
 check.classList.add('ukryteMiddle');
 });
 
+nrTyg.innerText = `Twój plan na  ten tydzień: `;
 
-nrTyg.innerText =  `Twój plan na  ten tydzień: `
-document.addEventListener('DOMContentLoaded', function() {
+prevBtn.addEventListener('click', function (event){
+  if (counter <= 0) {
+    alert('brak poprzednich planów');
 
+  }  else {
+    counter -= 1;
+  }
 
-    prevBtn.addEventListener('click', function (event) {
-        if (counter <= 0) {
-            alert('brak poprzednich planów');
-
-        } else {
-            counter -= 1;
-        }
-    });
-        nrTyg.innerText = `Twój plan na  ${counter} tydzień: `;
-    });
-    nextBtn.addEventListener('click', function (event) {
-        counter += 1;
-        nrTyg.innerText = `Twój plan na  ${counter} tydzień: `;
-    });
-
-
+  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+});
+nextBtn.addEventListener('click', function (event){
+  counter += 1;
+  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+});
 
 dodajPrzepis?.addEventListener('click', function(event) {
   pokazPrzepis.classList.toggle('ukrytePrzepis');
@@ -183,5 +172,3 @@ pokazDashboard?.addEventListener('click', function(event) {
 dodajPlan?.addEventListener('click', function(event) {
   pokazPlan.classList.toggle('ukrytePlan');
 });
-
-
