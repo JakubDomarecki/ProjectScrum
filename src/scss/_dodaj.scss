@@ -6,6 +6,24 @@
   height: 1rem;
 }
 
+.przepis__text {
+  color:$color-message-success ;
+}
+
+.prev__dni {
+  color:$color-buttons ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+
+.angles {
+  width: 1rem;
+  height: 1rem;
+
+}
 
 .left {
   width: 15rem;
@@ -68,7 +86,7 @@
   border: none  ;
 }
 .info_text {
-  padding-right: 33.5rem;
+  padding-right: 32rem;
   padding-left: 1rem;
 }
 .right__32 {
@@ -89,7 +107,7 @@
   width: 2rem;
 }
 .alert_text {
-  padding-right: 35.5rem;
+  padding-right: 34rem;
   padding-left: 1rem;
 }
 .alert_btn {
@@ -117,7 +135,7 @@
   width: 2rem;
 }
 .check_text{
-  padding-right: 23.9rem;
+  padding-right: 21rem;
   padding-left: 1rem;
 }
 .check_btn{

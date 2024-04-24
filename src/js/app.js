@@ -8,8 +8,13 @@ const schowajWelcome = document.querySelector('#recipes_form');
 const warning = document.querySelector('.recipes_p');
 const recipesInput = document.querySelector('.recipes_input');
 const headerName = document.querySelector('.header_name');
-
+const prevBtn = document.querySelector('#prev__dni')
+const nextBtn = document.querySelector('#next__dni')
+const nrTyg = document.querySelector("#nr__tygodnia")
 // | "pulpit" >
+let counter = 0
+
+nrTyg.innerText =  `Twój plan na  ten tydzień: `
 document.addEventListener('DOMContentLoaded', function() {
 
   let currentUrl = window.location.pathname.split('/').pop();
@@ -24,6 +29,20 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+prevBtn.addEventListener('click', function (event){
+  if (counter <= 0) {
+    alert('brak poprzednich planów')
+
+  }  else {
+    counter -=1
+  }
+
+  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `
+})
+nextBtn.addEventListener('click', function (event){
+  counter +=1
+  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `
+})
 
 dodajPrzepis?.addEventListener('click', function(event) {
   pokazPrzepis.classList.toggle('ukrytePrzepis');
