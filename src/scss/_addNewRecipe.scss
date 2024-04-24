@@ -5,17 +5,56 @@
   border: none;
   background-color: transparent;
 }
+
+.recipes__downOverlay {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 3rem;
+
+}
 .instructions {
-  width: 200px;
-  height: 200px;
-  background-color: blue;
+
+
+
 }
 .ingridients {
-  width: 200px;
-  height: 200px;
-  background-color: red;
-}
+ margin-left: 2rem;
 
+
+}
+.instructions__input {
+  width: 40rem;
+  height: 5rem;
+}
+.ingridients__input {
+  width:40rem;
+  height: 5rem;
+}
+.ingridients__list {
+  max-height: 50rem;
+  overflow: auto;
+}
+.border__down {
+  border-bottom: 1px solid black;
+}
+.ingridients__overlay {
+  display: flex;
+}
+.add__instructions {
+  margin-left: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+}
+.add__ingridients {
+  margin-left: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+}
+.instructions__list {
+  max-height: 50rem;
+  overflow: auto;
+}
 
 .schedules_form_buttons{
   margin: 1rem 2.5rem 1rem 2.5rem;
