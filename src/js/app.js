@@ -13,16 +13,32 @@ const nextBtn = document.querySelector('#next__dni');
 const nrTyg = document.querySelector("#nr__tygodnia");
 const infoText = document.querySelector(".info_text");
 
-const recipesOverlay = document.querySelector('.app_container_hide')
-const recipesHide =document.querySelector('#app_containerHide')
-const addRecipesOverlay = document.querySelector('.add_recipes')
+
+const recipesOverlay = document.querySelector('.app_container_hide');
+const recipesHide =document.querySelector('#app_containerHide');
+const addRecipesOverlay = document.querySelector('.add_recipes');
 
 
 recipesHide.addEventListener('click', function (event) {
-  recipesOverlay.classList.add('ukryteMiddle')
-  addRecipesOverlay.classList.toggle('ukryteMiddle')
-  console.log(20)
+  recipesOverlay.classList.add('ukryteMiddle');
+  addRecipesOverlay.classList.toggle('ukryteMiddle');
+ 
 });
+
+const recipesOverlay = document.querySelector('.app_container_hide');
+const recipesHide =document.querySelector('#app_containerHide');
+const addRecipesOverlay = document.querySelector('.add_recipes');
+const schedulesAdd = document.querySelector(".icon__add");
+const scheduleList = document.querySelector(".lista_planow_display");
+const newSchedule = document.querySelector('.new-plan-display');
+
+schedulesAdd.addEventListener('click', function(e) {
+  scheduleList.classList.add('new-plan-display-none');
+  newSchedule.classList.remove('new-plan-display-none');
+});
+
+
+
 
 // pasek nawigacji, jak spada niżej to przestaje działać
 document.addEventListener('DOMContentLoaded', function() {
@@ -111,6 +127,8 @@ check.classList.add('ukryteMiddle');
 });
 
 
+nrTyg.innerText =  `Twój plan na  ten tydzień: `
+document.addEventListener('DOMContentLoaded', function() {
 
 nrTyg.innerText =  `Twój plan na  ten tydzień: `;
 
@@ -119,7 +137,7 @@ prevBtn.addEventListener('click', function (event){
     alert('brak poprzednich planów');
 
   }  else {
-    counter = 1;
+    counter -= 1;
   }
 
   nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
@@ -165,6 +183,4 @@ pokazDashboard?.addEventListener('click', function(event) {
 
 dodajPlan?.addEventListener('click', function(event) {
   pokazPlan.classList.toggle('ukrytePlan');
-});
-
-
+})
