@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-dodajPrzepis.addEventListener('click', function(event) {
+dodajPrzepis?.addEventListener('click', function(event) {
   pokazPrzepis.classList.toggle('ukrytePrzepis');
 });
 
@@ -34,15 +34,15 @@ let savedName = localStorage.getItem('savedName');
 
 
 if (savedName) {
-  schowajWelcome.classList.add('ukrtyeForm');
-  pokazGuziki.classList.remove('ukryteMiddle');
+  schowajWelcome?.classList.add('ukrtyeForm');
+  pokazGuziki?.classList.remove('ukryteMiddle');
   headerName.innerText = savedName;
 } else {
   warning.classList.remove('ukrtyeForm');
 }
 
 
-pokazDashboard.addEventListener('click', function(event) {
+pokazDashboard?.addEventListener('click', function(event) {
   const userName = recipesInput.value;
 
   if (userName === '') {
@@ -59,6 +59,6 @@ pokazDashboard.addEventListener('click', function(event) {
 });
 
 
-dodajPlan.addEventListener('click', function(event) {
+dodajPlan?.addEventListener('click', function(event) {
   pokazPlan.classList.toggle('ukrytePlan');
 });
