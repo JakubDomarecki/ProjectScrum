@@ -64,27 +64,48 @@ td {
   font-weight: bold;
   padding: 0.5rem;
 }
-
-.schedules_form_description{
-  margin: 1rem 2.5rem 1rem 4rem;
-  display: flex;
-  align-items: center;
+.schedules_form_buttons{
+  margin: 1rem 2.5rem 1rem 2.5rem;
 }
-.schedules_form_description_container_label{
-  display: flex;
-  flex-direction: column;
-  margin-right: 4rem;
-  font-size: 2rem;
+.schedules_form_name{
+  margin-bottom: 1rem;
+}
+.schedules_form_description{
+  margin-bottom: 1rem;
+}
+.schedules_label{
+  font-size: 1.5rem;
   color: $color-headline;
 }
-.schedules_form_description_container_input{
-  display: flex;
-  flex-direction: column;
-  width: 78%;
+.schedules_label1{
+ margin-right: 3rem;
 }
-.schedules_form_description_input1{
-  margin-bottom: 1rem;
+.schedules_label2{
+  margin-right: 4.5rem;
 }
-.schedules_form_description_label{
-  margin-bottom: 1rem;
+.schedules_label3{
+  margin-right: 1rem;
+}
+.schedules_input1{
+  width: 79%;
+  padding: 5px;
+}
+.schedules_input2{
+  width: 79%;
+  padding: 5px;
+}
+.schedules_input3{
+  width: 2%;
+  padding: 5px;
+}
+
+
+//table
+.food{
+  text-align: center;
+  font-size: 13px;
+  width: 130px;
+}
+.th_none{
+  border-top: none;
 }
