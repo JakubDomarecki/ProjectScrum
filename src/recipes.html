@@ -43,10 +43,10 @@
 </nav>
 
 <main class="app__content">
-  <div  class="app__container app_container_hide">
-    <div  class="recipes__list__title  ">
+  <div class="app__container app_container_hide">
+    <div class="recipes__list__title  ">
       <h2>Lista Przepisów</h2>
-      <button id="app_containerHide" ><img class="icon__add" src="icons/square-plus-solid.svg" alt=""></button>
+      <button id="app_containerHide"><img class="icon__add" src="icons/square-plus-solid.svg" alt=""></button>
     </div>
     <table>
       <thead>
@@ -61,88 +61,114 @@
       </tbody>
     </table>
 
-  <div class="add_recipes ukryteMiddle app_container">
-    <div class="schedules_form">
-      <div class="schedules_form_header">
-        <h2 class="schedules_form_header_h2">NOWY PRZEPIS</h2>
-        <button class="schedules_form_header_buttton">Zapisz i zamknij</button>
+    <div class="add_recipes ukryteMiddle app_container">
+      <div class="schedules_form">
+        <div class="schedules_form_header">
+          <h2 class="schedules_form_header_h2">NOWY PRZEPIS</h2>
+          <button class="schedules_form_header_buttton">Zapisz i zamknij</button>
+        </div>
+
+        <div class="schedules_form_buttons">
+          <div class="schedules_form_name">
+            <label class="schedules_label schedules_label1">Nazwa przepisu</label>
+            <input type="text" class="schedules_input1">
+          </div>
+          <div class="schedules_form_description">
+            <label class="schedules_label schedules_label2">Opis przepisu</label>
+            <input type="text" class="schedules_input2">
+          </div>
+          <div class="recipes__downOverlay">
+            <div class="instructions">
+              <div class="border__down">INSTRUKCJE</div>
+              <div class="ingridients__overlay">
+                <input type="text" class="instructions__input">
+                <button class="add__instructions"></button>
+              </div>
+              <div class="instructions__list">
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+            <div class="ingridients">
+              <div class="border__down">SKŁADNIKI</div>
+              <div class="ingridients__overlay">
+                <input type="text" class="ingridients__input">
+                <button class="add__ingridients"></button>
+              </div>
+              <div class="ingridients__list">
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                    ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                    Consequatur
+                    consequuntur dolore labore provident quam.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-  <div class="schedules_form_buttons">
-    <div class="schedules_form_name">
-      <label class="schedules_label schedules_label1">Nazwa przepisu</label>
-      <input type="text" class="schedules_input1">
     </div>
-    <div class="schedules_form_description">
-      <label class="schedules_label schedules_label2">Opis przepisu</label>
-      <input type="text" class="schedules_input2">
-    </div>
-    <div class="recipes__downOverlay">
-   <div class="instructions">
-     <div class="border__down">INSTRUKCJE</div>
-     <div class="ingridients__overlay">
-     <input type="text" class="instructions__input"> <button class="add__instructions"></button>
-     </div>
-     <div class="instructions__list">
-       <ul>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
 
-       </ul>
-     </div>
-   </div>
-   <div class="ingridients">
-     <div class="border__down">SKŁADNIKI</div>
-     <div class="ingridients__overlay">
-     <input type="text" class="ingridients__input"> <button class="add__ingridients"></button>
-     </div>
-     <div class="ingridients__list">
-       <ul>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
-         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
-           ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel! Consequatur
-           consequuntur dolore labore provident quam.</li>
-       </ul>
-     </div>
-   </div>
+    <div class="add_recipes ukryteMiddle app__container">
     </div>
   </div>
-  </div>
-    </div>
-
-  <div class="add_recipes ukryteMiddle app__container">
-  </div>
-
 </main>
 
 <script type="module" src="js/app.js"></script>
