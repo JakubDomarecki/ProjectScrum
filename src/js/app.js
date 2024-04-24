@@ -15,6 +15,15 @@ const infoText = document.querySelector(".info_text");
 const recipesOverlay = document.querySelector('.app_container_hide');
 const recipesHide = document.querySelector('#app_containerHide');
 const addRecipesOverlay = document.querySelector('.add_recipes');
+const schedulesAdd = document.querySelector(".icon__add");
+const scheduleList = document.querySelector(".lista_planow_display");
+const newSchedule = document.querySelector('.new-plan-display');
+const closeBtn1 = document.querySelector('.info_btn');
+const closeBtn2 = document.querySelector('.alert_btn');
+const closeBtn3 = document.querySelector('.check_btn');
+const info = document.querySelector('#right__31');
+const warr = document.querySelector('#right__32');
+const check = document.querySelector('#right__33');
 
 // pasek nawigacji, jak spada niżej to przestaje działać
 document.addEventListener('DOMContentLoaded', function() {
@@ -30,118 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-recipesHide?.addEventListener('click', function (event) {
-  recipesOverlay.classList.add('ukryteMiddle');
-  addRecipesOverlay.classList.toggle('ukryteMiddle');
- 
-});
-
-const schedulesAdd = document.querySelector(".icon__add");
-const scheduleList = document.querySelector(".lista_planow_display");
-const newSchedule = document.querySelector('.new-plan-display');
-
-schedulesAdd?.addEventListener('click', function(event) {
-  scheduleList.classList.add('new-plan-display-none');
-  newSchedule.classList.remove('new-plan-display-none');
-});
-
-
-recipesHide?.addEventListener('click', function (event) {
-  recipesOverlay.classList.add('ukryteMiddle');
-  addRecipesOverlay.classList.toggle('ukryteMiddle');
-
-});
-
-function addRecipes() {
-  // Pobierz aktualną liczbę przepisów z Local Storage
-  let liczbaPrzepisow = localStorage.getItem('liczbaPrzepisow');
-
-  // Jeśli liczba przepisów nie istnieje, ustaw ją na 0
-  if (!liczbaPrzepisow) {
-    liczbaPrzepisow = 0;
-  } else {
-    // Jeśli istnieje, przekonwertuj ją na liczbę
-    liczbaPrzepisow = parseInt(liczbaPrzepisow);
-  }
-
-  // Dodaj nowy przepis
-  liczbaPrzepisow++;
-
-  // Zapisz aktualną liczbę przepisów do Local Storage
-  localStorage.setItem('liczbaPrzepisow', 'liczbaPrzepisow');
-
-  // Ustaw tekst informacyjny
-  infoText.innerText = `Masz już ${liczbaPrzepisow} przepisów, nieźle!`;
-
-  return liczbaPrzepisow;
-}
-
-// Dodaj obsługę zdarzenia "click" dla elementu infoText
-infoText?.addEventListener("click", function(event) {
-  addRecipes();
-});
-
-// Wywołaj funkcję addRecipes() podczas załadowania strony
-window.onload = function() {
-  addRecipes();
-};
-
-
-
-
-
-
-
-
-
-
-const closeBtn1 = document.querySelector('.info_btn');
-const closeBtn2 = document.querySelector('.alert_btn');
-const closeBtn3 = document.querySelector('.check_btn');
-const info = document.querySelector('#right__31');
-const warr = document.querySelector('#right__32');
-const check = document.querySelector('#right__33');
-
-
-
-let counter = 0;
-
-
-
-closeBtn1?.addEventListener('click', function (event){
-info.classList.add('ukryteMiddle');
-});
-closeBtn2?.addEventListener('click', function (event){
-warr.classList.add('ukryteMiddle');
-});
-closeBtn3?.addEventListener('click', function (event){
-check.classList.add('ukryteMiddle');
-});
-
-nrTyg.innerText = `Twój plan na  ten tydzień: `;
-
-prevBtn.addEventListener('click', function (event){
-  if (counter <= 0) {
-    alert('brak poprzednich planów');
-
-  }  else {
-    counter -= 1;
-  }
-
-  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
-});
-nextBtn.addEventListener('click', function (event){
-  counter += 1;
-  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
-});
-
-dodajPrzepis?.addEventListener('click', function(event) {
-  pokazPrzepis.classList.toggle('ukrytePrzepis');
-});
-
-
+// logowanie
 let savedName = localStorage.getItem('savedName');
-
 
 if (savedName) {
   schowajWelcome?.classList.add('ukrtyeForm');
@@ -150,8 +49,6 @@ if (savedName) {
 } else {
   warning.classList.remove('ukrtyeForm');
 }
-
-
 pokazDashboard?.addEventListener('click', function(event) {
   const userName = recipesInput.value;
 
@@ -168,7 +65,90 @@ pokazDashboard?.addEventListener('click', function(event) {
   }
 });
 
-
-dodajPlan?.addEventListener('click', function(event) {
-  pokazPlan.classList.toggle('ukrytePlan');
+// ukrywanie okna przepisu
+recipesHide?.addEventListener('click', function (event) {
+  recipesOverlay.classList.add('ukryteMiddle');
+  addRecipesOverlay.classList.toggle('ukryteMiddle');
 });
+
+
+// ukrywanie + pokazanie dodawania planu
+schedulesAdd?.addEventListener('click', function(event) {
+  scheduleList.classList.add('new-plan-display-none');
+  newSchedule.classList.remove('new-plan-display-none');
+});
+
+// dodawanie ilości przepisów -test
+// function addRecipes() {
+//   // Pobierz aktualną liczbę przepisów z Local Storage
+//   let liczbaPrzepisow = localStorage.getItem('liczbaPrzepisow');
+//
+//   // Jeśli liczba przepisów nie istnieje, ustaw ją na 0
+//   if (!liczbaPrzepisow) {
+//     liczbaPrzepisow = 0;
+//   } else {
+//     // Jeśli istnieje, przekonwertuj ją na liczbę
+//     liczbaPrzepisow = parseInt(liczbaPrzepisow);
+//   }
+//
+//   // Dodaj nowy przepis
+//   liczbaPrzepisow++;
+//
+//   // Zapisz aktualną liczbę przepisów do Local Storage
+//   localStorage.setItem('liczbaPrzepisow', 'liczbaPrzepisow');
+//
+//   // Ustaw tekst informacyjny
+//   infoText.innerText = `Masz już ${liczbaPrzepisow} przepisów, nieźle!`;
+//
+//   return liczbaPrzepisow;
+// }
+//
+// // Dodaj obsługę zdarzenia "click" dla elementu infoText
+// infoText?.addEventListener("click", function(event) {
+//   addRecipes();
+// });
+//
+// // Wywołaj funkcję addRecipes() podczas załadowania strony
+// window.onload = function() {
+//   addRecipes();
+// };
+
+// zamykanie powiadomień na app.html
+closeBtn1.addEventListener('click', function (event){
+info.classList.add('ukryteMiddle');
+});
+closeBtn2.addEventListener('click', function (event){
+warr.classList.add('ukryteMiddle');
+});
+closeBtn3.addEventListener('click', function (event){
+check.classList.add('ukryteMiddle');
+});
+
+//tekst planu na app.html
+nrTyg.innerText = `Twój plan na  ten tydzień: `;
+let counter = 0;
+prevBtn.addEventListener('click', function (event){
+  if (counter <= 0) {
+    alert('brak poprzednich planów');
+
+  }  else {
+    counter -= 1;
+  }
+  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+});
+nextBtn.addEventListener('click', function (event){
+  counter += 1;
+  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+});
+
+// Dodawanie przepisu
+// dodajPrzepis?.addEventListener('click', function(event) {
+//   pokazPrzepis.classList.toggle('ukrytePrzepis');
+// });
+
+
+//
+//
+// dodajPlan?.addEventListener('click', function(event) {
+//   pokazPlan.classList.toggle('ukrytePlan');
+// });
