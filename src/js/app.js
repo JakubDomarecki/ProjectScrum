@@ -12,9 +12,22 @@ const prevBtn = document.querySelector('#prev__dni');
 const nextBtn = document.querySelector('#next__dni');
 const nrTyg = document.querySelector("#nr__tygodnia");
 const infoText = document.querySelector(".info_text");
-const recipesOverlay = document.querySelector('.app_container_hide')
-const recipesHide =document.querySelector('#app_containerHide')
-const addRecipesOverlay = document.querySelector('.add_recipes')
+
+
+const recipesOverlay = document.querySelector('.app_container_hide');
+const recipesHide =document.querySelector('#app_containerHide');
+const addRecipesOverlay = document.querySelector('.add_recipes');
+
+
+recipesHide.addEventListener('click', function (event) {
+  recipesOverlay.classList.add('ukryteMiddle');
+  addRecipesOverlay.classList.toggle('ukryteMiddle');
+ 
+});
+
+const recipesOverlay = document.querySelector('.app_container_hide');
+const recipesHide =document.querySelector('#app_containerHide');
+const addRecipesOverlay = document.querySelector('.add_recipes');
 const schedulesAdd = document.querySelector(".icon__add");
 const scheduleList = document.querySelector(".lista_planow_display");
 const newSchedule = document.querySelector('.new-plan-display');
@@ -23,6 +36,7 @@ schedulesAdd.addEventListener('click', function(e) {
   scheduleList.classList.add('new-plan-display-none');
   newSchedule.classList.remove('new-plan-display-none');
 });
+
 
 
 
@@ -123,7 +137,7 @@ prevBtn.addEventListener('click', function (event){
     alert('brak poprzednich planów');
 
   }  else {
-    counter = 1;
+    counter -= 1;
   }
 
   nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
