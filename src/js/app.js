@@ -78,7 +78,7 @@ schedulesAdd?.addEventListener('click', function(event) {
   newSchedule.classList.remove('new-plan-display-none');
 });
 
-// dodawanie ilości przepisów -test
+// dodawanie ilości przepisów -test counter coś tam
 // function addRecipes() {
 //   // Pobierz aktualną liczbę przepisów z Local Storage
 //   let liczbaPrzepisow = localStorage.getItem('liczbaPrzepisow');
@@ -112,7 +112,7 @@ schedulesAdd?.addEventListener('click', function(event) {
 // window.onload = function() {
 //   addRecipes();
 // };
-
+//
 // zamykanie powiadomień na app.html
 closeBtn1.addEventListener('click', function (event){
 info.classList.add('ukryteMiddle');
@@ -145,10 +145,6 @@ nextBtn.addEventListener('click', function (event){
 // dodajPrzepis?.addEventListener('click', function(event) {
 //   pokazPrzepis.classList.toggle('ukrytePrzepis');
 // });
-
-
-//
-//
 // dodajPlan?.addEventListener('click', function(event) {
 //   pokazPlan.classList.toggle('ukrytePlan');
 // });
