@@ -11,8 +11,55 @@ const headerName = document.querySelector('.header_name');
 const prevBtn = document.querySelector('#prev__dni')
 const nextBtn = document.querySelector('#next__dni')
 const nrTyg = document.querySelector("#nr__tygodnia")
+const infoText = document.querySelector(".info_text");
+
+
+
+function addRecipes() {
+  // Pobierz aktualną liczbę przepisów z Local Storage
+  let liczbaPrzepisow = localStorage.getItem('liczbaPrzepisow');
+
+  // Jeśli liczba przepisów nie istnieje, ustaw ją na 0
+  if (!liczbaPrzepisow) {
+    liczbaPrzepisow = 0;
+  } else {
+    // Jeśli istnieje, przekonwertuj ją na liczbę
+    liczbaPrzepisow = parseInt(liczbaPrzepisow);
+  }
+
+  // Dodaj nowy przepis
+  liczbaPrzepisow++;
+
+  // Zapisz aktualną liczbę przepisów do Local Storage
+  localStorage.setItem('liczbaPrzepisow', liczbaPrzepisow);
+
+  // Ustaw tekst informacyjny
+  infoText.innerText = `Masz już ${liczbaPrzepisow} przepisów, nieźle!`;
+
+  return liczbaPrzepisow;
+}
+
+// Dodaj obsługę zdarzenia "click" dla elementu infoText
+infoText.addEventListener("click", function(e) {
+  addRecipes();
+});
+
+// Wywołaj funkcję addRecipes() podczas załadowania strony
+window.onload = function() {
+  addRecipes();
+};
+
+
+
+
+
+
+
+
+
+
 // | "pulpit" >
-let counter = 0
+let counter = 0;
 
 nrTyg.innerText =  `Twój plan na  ten tydzień: `
 document.addEventListener('DOMContentLoaded', function() {
@@ -81,3 +128,5 @@ pokazDashboard?.addEventListener('click', function(event) {
 dodajPlan?.addEventListener('click', function(event) {
   pokazPlan.classList.toggle('ukrytePlan');
 });
+
+
