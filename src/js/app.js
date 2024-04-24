@@ -169,9 +169,4 @@ pokazDashboard?.addEventListener('click', function(event) {
 
 dodajPlan?.addEventListener('click', function(event) {
   pokazPlan.classList.toggle('ukrytePlan');
-});
-
-
-
-
-
+})
