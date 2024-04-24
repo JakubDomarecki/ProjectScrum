@@ -91,9 +91,9 @@ td {
   padding: 5px;
 }
 .schedules_input2{
-  width: 79.1%;
+  min-width: 79.1%;
   padding: 5px;
-  height: 100px;
+  min-height: 100px;
 }
 .schedules_input3{
  width: 2%;
@@ -115,6 +115,16 @@ td {
 }
 .shedules_table td,th{
   color: $color-headline;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: Arial, serif;
+}
+.shedules_table th,td{
+  text-align: center;
+}
+.shedules_table select{
+  padding: 3px;
+  border-radius: 5px;
+  color: $color-headline;
 }
 
