@@ -5,25 +5,30 @@
 
 footer {
   background-color: $color-side;
-  color: white;
+  color: $color-background;
   font-family: $text-font;
- padding-top: 1rem;
+  padding: 28px 0 0 0; // rem!
 }
 
-.footer__cols {
-
+.footer__columns {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
+  align-items: start;
+  padding-bottom: 28px;
+}
 
-  padding-inline: 1rem;
+.footer__column {
+  display: flex;
+  flex-direction: column;
+}
+
+
 .footer__ul {
-
   padding-left: 1rem;
 }
-}
-.footer__text_h2{
- padding-top: 1rem;
+
+.input__footer {
+  padding-top: 7px;
 }
 
 .footer__copyright {
@@ -33,46 +38,41 @@ footer {
   padding: 1rem;
 }
 
-.footer__shit {
+.footer__icons {
   display: flex;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
   align-items: center;
 }
 
 .footer__fb {
-
- width: 2rem;
-  height: 2rem;
-
+  width: 1.5rem;
+  height: 1.5rem;
 }
+
 .footer__twitter {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin-left: 2rem;
-
 }
+
 .footer_ig {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin-left: 2rem;
 
 }
+
 .footer__btn {
   background-color: $color-buttons;
-  color: white;
-
+  color: $color-background;
 }
-.footer__fb__color {
 
-}
-.footer__text__inp {
-
-
-}
 .footer__form {
   padding-top: 1rem;
+  display: flex;
 }
-.footer__log  {
-  color: #FF6600;
+
+.footer__log {
+  color: $color-buttons;
   font-family: $text-font;
 }

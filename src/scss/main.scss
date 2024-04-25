@@ -7,6 +7,8 @@
 @import "components/buttons";
 @import "layout/features";
 @import "layout/footer";
+@import "layout/newsletter";
+@import "layout/aboutMe";
 @import "pages/app";
 @import "recipes-form";
 @import "pages/_recipes.scss";
@@ -20,17 +22,34 @@ body {
   font-size: $base-font-size;
 }
 
-.container{
+.container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1640px;
+  margin: 0 auto;
+  background-color: $color-background;
+}
+
+.container__landingpage {
+  width: 70%;
   margin: 0 auto;
 }
 
-h2 {
+h1 {
   font-size: 2rem;
-  text-align: center;
+}
+h2 {
+  font-size: 1.75rem;
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
 
