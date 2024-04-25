@@ -1,5 +1,16 @@
-@import "pages/schedules";
+@import "variables/colours";
 
+.container__recipes {
+
+  margin: 1rem;
+
+}
+.container__border {
+  background-color: $color-background;
+  width: 80%;
+  padding-right: 1rem;
+  border: 0.2rem dashed gray;
+}
 #app_containerHide {
   border: none;
   background-color: transparent;
@@ -11,25 +22,30 @@
   align-items: center;
   margin-top: 3rem;
 
+
+
+
 }
-.instructions {
-}
+
+
 
 .ingridients {
  margin-left: 2rem;
 }
 
 .instructions__input {
+  margin-top:0.3rem;
   width: 40rem;
   height: 5rem;
 }
 
 .ingridients__input {
+  margin-top: 0.3rem;
   width:40rem;
   height: 5rem;
 }
 .ingridients__list {
-  max-height: 50rem;
+  height: 30rem;
   overflow: auto;
 }
 .border__down {
@@ -38,52 +54,68 @@
 .ingridients__overlay {
   display: flex;
 }
-.add__instructions {
-  margin-left: 0.5rem;
-  width: 3rem;
-  height: 3rem;
+.plus_icon {
+  background-color: $color-message-success;
+  margin-left: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 7px;
+  margin-top: 0.3rem;
 }
-.add__ingridients {
-  margin-left: 0.5rem;
-  width: 3rem;
-  height: 3rem;
+
+
+.img_size {
+  width: 20px;
+  height: 20px;
 }
+
 .instructions__list {
-  max-height: 50rem;
-  overflow: auto;
+  height: 30rem;
+
+
 }
+
+.instruction_list_ul {
+
+  list-style: decimal;
+  max-height: 40rem;
+}
+
 
 .schedules_form_buttons{
   margin: 1rem 2.5rem 1rem 2.5rem;
 }
 .schedules_form_name{
   margin-bottom: 1rem;
+
 }
 .schedules_form_description{
   margin-bottom: 1rem;
 }
-.schedules_label{
+.recipes_label{
   font-size: 1.5rem;
   color: $color-headline;
 }
-.schedules_label1{
+.recipes_label1 {
   margin-right: 3rem;
+
 }
-.schedules_label2{
-  margin-right: 4.5rem;
+.recipes_label2 {
+
+  margin-right: 4.7rem;
 }
-.schedules_label3{
-  margin-right: 1rem;
-}
-.schedules_input1{
-  width: 79%;
+
+.recipes_input{
+
+  width: 60%;
+  max-width: 70%;
   padding: 5px;
 }
-.schedules_input2{
-  width: 79%;
+.recipes_input2{
+
+  width: 60%;
+  height: 3rem;
   padding: 5px;
 }
-.schedules_input3{
-  width: 2%;
-  padding: 5px;
-}
+

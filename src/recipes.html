@@ -62,6 +62,8 @@
     </table>
   </div>
   <div class="add_recipes ukryteMiddle app_container">
+    <div class="container__recipes">
+      <div class="container__border">
     <div class="schedules_form">
       <div class="schedules_form_header">
         <h2 class="schedules_form_header_h2">NOWY PRZEPIS</h2>
@@ -69,23 +71,45 @@
       </div>
 
       <div class="schedules_form_buttons">
+        <div class="inputs_recipes">
         <div class="schedules_form_name">
-          <label class="schedules_label schedules_label1">Nazwa przepisu</label>
-          <input type="text" class="schedules_input1">
+          <label class="recipes_label recipes_label1">Nazwa przepisu</label>
+          <input type="text" class="recipes_input">
         </div>
         <div class="schedules_form_description">
-          <label class="schedules_label schedules_label2">Opis przepisu</label>
-          <input type="text" class="schedules_input2">
+          <label class="recipes_label recipes_label2">Opis przepisu</label>
+          <textarea type="text" class="recipes_input2"></textarea>
+        </div>
         </div>
         <div class="recipes__downOverlay">
           <div class="instructions">
             <div class="border__down">INSTRUKCJE</div>
             <div class="ingridients__overlay">
-              <input type="text" class="instructions__input">
-              <button class="add__instructions"></button>
+              <textarea type="text" class="instructions__input"></textarea>
+              <button class="plus_icon"><img class="img_size" src="icons/plus-solid1.svg" alt=""></button>
             </div>
             <div class="instructions__list">
-              <ul>
+              <ul class="instruction_list_ul">
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                  Consequatur
+                  consequuntur dolore labore provident quam.
+                </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                  Consequatur
+                  consequuntur dolore labore provident quam.
+                </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                  Consequatur
+                  consequuntur dolore labore provident quam.
+                </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
+                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
+                  Consequatur
+                  consequuntur dolore labore provident quam.
+                </li>
                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of
                   ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!
                   Consequatur
@@ -117,14 +141,15 @@
                   consequuntur dolore labore provident quam.
                 </li>
 
+
               </ul>
             </div>
           </div>
           <div class="ingridients">
             <div class="border__down">SKŁADNIKI</div>
             <div class="ingridients__overlay">
-              <input type="text" class="ingridients__input">
-              <button class="add__ingridients"></button>
+              <textarea type="text" class="ingridients__input"></textarea>
+              <button class="plus_icon"><img class="img_size" src="icons/plus-solid1.svg" alt=""></button>
             </div>
             <div class="ingridients__list">
               <ul>
@@ -164,9 +189,11 @@
         </div>
       </div>
     </div>
+      </div>
   </div>
 
   <div class="add_recipes ukryteMiddle app__container">
+  </div>
   </div>
 </main>
 
