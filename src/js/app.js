@@ -113,32 +113,33 @@ schedulesAdd?.addEventListener('click', function(event) {
 // };
 //
 // zamykanie powiadomień na app.html
-closeBtn1.addEventListener('click', function (event){
-info.classList.add('ukryteMiddle');
-});
-closeBtn2.addEventListener('click', function (event){
-warr.classList.add('ukryteMiddle');
-});
-closeBtn3.addEventListener('click', function (event){
-check.classList.add('ukryteMiddle');
-});
 
-//tekst planu na app.html
-nrTyg.innerText = `Twój plan na  ten tydzień: `;
-let counter = 0;
-prevBtn.addEventListener('click', function (event){
-  if (counter <= 0) {
-    alert('brak poprzednich planów');
-
-  }  else {
-    counter -= 1;
-  }
-  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
-});
-nextBtn.addEventListener('click', function (event){
-  counter += 1;
-  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
-});
+// closeBtn1.addEventListener('click', function (event){
+// info.classList.add('ukryteMiddle');
+// });
+// closeBtn2.addEventListener('click', function (event){
+// warr.classList.add('ukryteMiddle');
+// });
+// closeBtn3.addEventListener('click', function (event){
+// check.classList.add('ukryteMiddle');
+// });
+//
+// //tekst planu na app.html
+// nrTyg.innerText = `Twój plan na  ten tydzień: `;
+// let counter = 0;
+// prevBtn.addEventListener('click', function (event){
+//   if (counter <= 0) {
+//     alert('brak poprzednich planów');
+//
+//   }  else {
+//     counter -= 1;
+//   }
+//   nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+// });
+// nextBtn.addEventListener('click', function (event){
+//   counter += 1;
+//   nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+// });
 
 // Dodawanie przepisu
 // dodajPrzepis?.addEventListener('click', function(event) {
@@ -147,3 +148,71 @@ nextBtn.addEventListener('click', function (event){
 // dodajPlan?.addEventListener('click', function(event) {
 //   pokazPlan.classList.toggle('ukrytePlan');
 // });
+
+
+// logika dodawania planu
+
+let addSchedulesTitle = document.getElementById("addSchedulesTitle");
+let addSchedulesDescription = document.getElementById("addSchedulesDescription");
+let addSchedulesNumber = document.getElementById("addSchedulesNumber");
+let addSchedulesSave = document.getElementById("addSchedulesSave");
+
+// Funkcja zapisywania planu do localStorage
+function saveScheduleValueToLocalStorage(newObject) {
+  let dataFromLocalStorage = JSON.parse(localStorage.getItem("schedules")) || [];
+  dataFromLocalStorage.push(newObject);
+  localStorage.setItem("schedules", JSON.stringify(dataFromLocalStorage));
+  alert("Plan zapisany do localStorage.");
+}
+
+// Funkcja do ładowania danych z localStorage i wyświetlania ich w tabeli
+function loadScheduleValuesFromLocalStorage() {
+  let dataFromLocalStorage = JSON.parse(localStorage.getItem("schedules")) || [];
+  let schedulesList = document.getElementById("schedulesList");
+
+  dataFromLocalStorage.forEach((schedule, index) => {
+
+    // Tworzymy nowy wiersz tabeli
+    let newRow = document.createElement("tr");
+
+    // Kolumna ID
+    let idCell = document.createElement("td");
+    idCell.textContent = index.toString();
+    newRow.appendChild(idCell);
+
+    // Kolumna tytuł
+    let titleCell = document.createElement("td");
+    titleCell.textContent = schedule.title;
+    newRow.appendChild(titleCell);
+
+    // Kolumna opis
+    let descriptionCell = document.createElement("td");
+    descriptionCell.textContent = schedule.description;
+    newRow.appendChild(descriptionCell);
+
+    // Kolumna numer
+    let numberCell = document.createElement("td");
+    numberCell.textContent = schedule.number;
+    newRow.appendChild(numberCell);
+
+    // Kolumna akcje
+
+    // Dodaj wiersz do tabeli
+    schedulesList.appendChild(newRow);
+  });
+}
+// Wywołanie funkcji ładowania danych przy ładowaniu strony
+window.addEventListener("load", loadScheduleValuesFromLocalStorage);
+
+// Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
+addSchedulesSave.addEventListener("click", function(e) {
+  e.preventDefault();
+  const newScheduleValue = {
+    title: addSchedulesTitle.value,
+    description: addSchedulesDescription.value,
+    number: addSchedulesNumber.value
+  };
+  saveScheduleValueToLocalStorage(newScheduleValue);
+  console.log("Zapisano: ", newScheduleValue);
+  window.location.href = "schedules.html"; // Przekierowanie do strony schedules.html
+});
