@@ -79,6 +79,14 @@
   font-weight: bold;
   font-family: Arial, serif;
 }
+
+.day{
+  color: $color-headline;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: Arial, serif;
+}
+
 .shedules_table th,td{
   text-align: center;
 }
@@ -88,6 +96,12 @@
 }
 .new-plan-display-none{
   display: none;
+}
+.schedules_table td{
+  text-align: center;
+}
+.schedules_table th{
+  text-align: center;
 }
 
 

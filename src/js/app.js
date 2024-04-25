@@ -24,6 +24,9 @@ const closeBtn3 = document.querySelector('.check_btn');
 const info = document.querySelector('#right__31');
 const warr = document.querySelector('#right__32');
 const check = document.querySelector('#right__33');
+const selects = document.querySelectorAll('.food');
+const SavePlan = document.querySelector(".schedules_form_header_buttton");
+
 
 // logowanie
 let savedName = localStorage.getItem('savedName');
@@ -113,32 +116,32 @@ schedulesAdd?.addEventListener('click', function(event) {
 // };
 //
 // zamykanie powiadomień na app.html
-closeBtn1.addEventListener('click', function (event){
-info.classList.add('ukryteMiddle');
-});
-closeBtn2.addEventListener('click', function (event){
-warr.classList.add('ukryteMiddle');
-});
-closeBtn3.addEventListener('click', function (event){
-check.classList.add('ukryteMiddle');
-});
+// closeBtn1.addEventListener('click', function (event){
+// info.classList.add('ukryteMiddle');
+// });
+// closeBtn2.addEventListener('click', function (event){
+// warr.classList.add('ukryteMiddle');
+// });
+// closeBtn3.addEventListener('click', function (event){
+// check.classList.add('ukryteMiddle');
+// });
 
 //tekst planu na app.html
-nrTyg.innerText = `Twój plan na  ten tydzień: `;
-let counter = 0;
-prevBtn.addEventListener('click', function (event){
-  if (counter <= 0) {
-    alert('brak poprzednich planów');
-
-  }  else {
-    counter -= 1;
-  }
-  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
-});
-nextBtn.addEventListener('click', function (event){
-  counter += 1;
-  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
-});
+// nrTyg.innerText = `Twój plan na  ten tydzień: `;
+// let counter = 0;
+// prevBtn.addEventListener('click', function (event){
+//   if (counter <= 0) {
+//     alert('brak poprzednich planów');
+//
+//   }  else {
+//     counter -= 1;
+//   }
+//   nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+// });
+// nextBtn.addEventListener('click', function (event){
+//   counter += 1;
+//   nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+// });
 
 // Dodawanie przepisu
 // dodajPrzepis?.addEventListener('click', function(event) {
@@ -147,3 +150,25 @@ nextBtn.addEventListener('click', function (event){
 // dodajPlan?.addEventListener('click', function(event) {
 //   pokazPlan.classList.toggle('ukrytePlan');
 // });
+
+
+
+// ściąganie informacji z select option
+// Pobierz wszystkie elementy select w tabeli
+
+let selectedOptionsValues = [];
+
+selects.forEach(select => {
+  const selectedOption = select.querySelector('option:checked');
+  if (selectedOption) {
+    selectedOptionsValues.push(selectedOption.value);
+  }
+});
+
+localStorage.setItem('selectedOptionsValues', JSON.stringify(selectedOptionsValues));
+
+//zamyka towrzenie planu i pokazuje liste
+SavePlan.addEventListener("click", function(e) {
+  scheduleList.classList.remove('new-plan-display-none');
+  newSchedule.classList.add('new-plan-display-none');
+});
