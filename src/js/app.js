@@ -28,7 +28,7 @@ const selects = document.querySelectorAll('.food');
 const SavePlan = document.querySelector(".schedules_form_header_buttton");
 
 
-// logowanie
+// // logowanie
 let savedName = localStorage.getItem('savedName');
 
 if (savedName) {
@@ -81,77 +81,77 @@ schedulesAdd?.addEventListener('click', function(event) {
 });
 
 // dodawanie ilości przepisów -test counter coś tam
-// function addRecipes() {
-//   // Pobierz aktualną liczbę przepisów z Local Storage
-//   let liczbaPrzepisow = localStorage.getItem('liczbaPrzepisow');
+function addRecipes() {
+  // Pobierz aktualną liczbę przepisów z Local Storage
+  let liczbaPrzepisow = localStorage.getItem('liczbaPrzepisow');
+
+  // Jeśli liczba przepisów nie istnieje, ustaw ją na 0
+  if (!liczbaPrzepisow) {
+    liczbaPrzepisow = 0;
+  } else {
+    // Jeśli istnieje, przekonwertuj ją na liczbę
+    liczbaPrzepisow = parseInt(liczbaPrzepisow);
+  }
+
+  // Dodaj nowy przepis
+  liczbaPrzepisow++;
+
+  // Zapisz aktualną liczbę przepisów do Local Storage
+  localStorage.setItem('liczbaPrzepisow', 'liczbaPrzepisow');
+
+  // Ustaw tekst informacyjny
+  infoText.innerText = `Masz już ${liczbaPrzepisow} przepisów, nieźle!`;
+
+  return liczbaPrzepisow;
+}
 //
-//   // Jeśli liczba przepisów nie istnieje, ustaw ją na 0
-//   if (!liczbaPrzepisow) {
-//     liczbaPrzepisow = 0;
-//   } else {
-//     // Jeśli istnieje, przekonwertuj ją na liczbę
-//     liczbaPrzepisow = parseInt(liczbaPrzepisow);
-//   }
+// Dodaj obsługę zdarzenia "click" dla elementu infoText
+infoText?.addEventListener("click", function(event) {
+  addRecipes();
+});
 //
-//   // Dodaj nowy przepis
-//   liczbaPrzepisow++;
-//
-//   // Zapisz aktualną liczbę przepisów do Local Storage
-//   localStorage.setItem('liczbaPrzepisow', 'liczbaPrzepisow');
-//
-//   // Ustaw tekst informacyjny
-//   infoText.innerText = `Masz już ${liczbaPrzepisow} przepisów, nieźle!`;
-//
-//   return liczbaPrzepisow;
-// }
-//
-// // Dodaj obsługę zdarzenia "click" dla elementu infoText
-// infoText?.addEventListener("click", function(event) {
-//   addRecipes();
-// });
-//
-// // Wywołaj funkcję addRecipes() podczas załadowania strony
-// window.onload = function() {
-//   addRecipes();
-// };
+// Wywołaj funkcję addRecipes() podczas załadowania strony
+window.onload = function() {
+  addRecipes();
+};
 //
 // zamykanie powiadomień na app.html
 
-// closeBtn1.addEventListener('click', function (event){
-// info.classList.add('ukryteMiddle');
-// });
-// closeBtn2.addEventListener('click', function (event){
-// warr.classList.add('ukryteMiddle');
-// });
-// closeBtn3.addEventListener('click', function (event){
-// check.classList.add('ukryteMiddle');
-// });
+closeBtn1.addEventListener('click', function (event){
+info.classList.add('ukryteMiddle');
+});
+closeBtn2.addEventListener('click', function (event){
+warr.classList.add('ukryteMiddle');
+});
+closeBtn3.addEventListener('click', function (event){
+check.classList.add('ukryteMiddle');
+});
 
 //tekst planu na app.html
 
-// nrTyg.innerText = `Twój plan na  ten tydzień: `;
-// let counter = 0;
-// prevBtn.addEventListener('click', function (event){
-//   if (counter <= 0) {
-//     alert('brak poprzednich planów');
-//
-//   }  else {
-//     counter -= 1;
-//   }
-//   nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
-// });
-// nextBtn.addEventListener('click', function (event){
-//   counter += 1;
-//   nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
-// });
+nrTyg.innerText = `Twój plan na  ten tydzień: `;
+let counter = 0;
+prevBtn.addEventListener('click', function (event){
+  if (counter <= 0) {
+    alert('brak poprzednich planów');
+
+  }  else {
+    counter -= 1;
+  }
+  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+});
+nextBtn.addEventListener('click', function (event){
+  counter += 1;
+  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+});
 
 // Dodawanie przepisu
-// dodajPrzepis?.addEventListener('click', function(event) {
-//   pokazPrzepis.classList.toggle('ukrytePrzepis');
-// });
-// dodajPlan?.addEventListener('click', function(event) {
-//   pokazPlan.classList.toggle('ukrytePlan');
-// });
+dodajPrzepis?.addEventListener('click', function(event) {
+  pokazPrzepis.classList.toggle('ukrytePrzepis');
+});
+dodajPlan?.addEventListener('click', function(event) {
+  pokazPlan.classList.toggle('ukrytePlan');
+});
 
 
 let addSchedulesTitle = document.getElementById("addSchedulesTitle");
@@ -166,27 +166,27 @@ function saveScheduleValueToLocalStorage(newObject) {
   localStorage.setItem("schedules", JSON.stringify(dataFromLocalStorage));
   alert("Plan zapisany do localStorage.");
 }
-
-// Funkcja do ładowania danych z localStorage i wyświetlania ich w tabeli
+//
+// // Funkcja do ładowania danych z localStorage i wyświetlania ich w tabeli
 function loadScheduleValuesFromLocalStorage() {
   let dataFromLocalStorage = JSON.parse(localStorage.getItem("schedules")) || [];
   let schedulesList = document.getElementById("schedulesList");
 
   dataFromLocalStorage.forEach((schedule, index) => {
-
-    // Tworzymy nowy wiersz tabeli
+//
+//     // Tworzymy nowy wiersz tabeli
     let newRow = document.createElement("tr");
-
-    // Kolumna ID
+//
+//     // Kolumna ID
     let idCell = document.createElement("td");
     idCell.textContent = index.toString();
     newRow.appendChild(idCell);
-
-    // Kolumna tytuł
+//
+//     // Kolumna tytuł
     let titleCell = document.createElement("td");
     titleCell.textContent = schedule.title;
     newRow.appendChild(titleCell);
-
+//
     // Kolumna opis
     let descriptionCell = document.createElement("td");
     descriptionCell.textContent = schedule.description;
@@ -217,25 +217,25 @@ addSchedulesSave.addEventListener("click", function(e) {
   saveScheduleValueToLocalStorage(newScheduleValue);
   console.log("Zapisano: ", newScheduleValue);
   window.location.href = "schedules.html"; // Przekierowanie do strony schedules.html
-
+});
 
 // ściąganie informacji z select option
 // Pobierz wszystkie elementy select w tabeli
 
-let selectedOptionsValues = [];
+// let selectedOptionsValues = [];
+//
+// selects.forEach(select => {
+//   const selectedOption = select.querySelector('option:checked');
+//   if (selectedOption) {
+//     selectedOptionsValues.push(selectedOption.value);
+//   }
+// });
+//
+// localStorage.setItem('selectedOptionsValues', JSON.stringify(selectedOptionsValues));
 
-selects.forEach(select => {
-  const selectedOption = select.querySelector('option:checked');
-  if (selectedOption) {
-    selectedOptionsValues.push(selectedOption.value);
-  }
-});
-
-localStorage.setItem('selectedOptionsValues', JSON.stringify(selectedOptionsValues));
-
-//zamyka towrzenie planu i pokazuje liste
-SavePlan.addEventListener("click", function(e) {
-  scheduleList.classList.remove('new-plan-display-none');
-  newSchedule.classList.add('new-plan-display-none');
-
-});
+// zamyka towrzenie planu i pokazuje liste
+// SavePlan.addEventListener("click", function(e) {
+//   scheduleList.classList.remove('new-plan-display-none');
+//   newSchedule.classList.add('new-plan-display-none');
+//
+// });
