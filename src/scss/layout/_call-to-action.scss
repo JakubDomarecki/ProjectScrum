@@ -2,13 +2,21 @@
 @import "../variables/colours";
 @import "../variables/fonts";
 
-.call-to-action {
-  display: flex;
-  justify-content: space-around;
-  align-items: end;
+.dark__section {
   background: $color-headline;
-  color: #fff;
-  padding: 25px 0 25px 0; // po merge podmiana na rem
-  //font-family: $;
+  color: $color-background;
+  padding: 28px 0 28px 0; // rem!
+  &__left{
+    width: 800px;
+  }
 }
 
+.container__landingpage {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.dark__section__right-modifier {
+  display: inline-block;
+}

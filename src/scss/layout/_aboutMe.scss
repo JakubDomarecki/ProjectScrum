@@ -1,0 +1,22 @@
+@import "../variables/colours";
+@import "../variables/fonts";
+
+.customer-section {
+  max-width: 100%;
+  margin: 70px auto 70px;
+}
+
+.portrait {
+  height: 250px;
+  width: 250px;
+  padding-right: 70px;
+}
+
+.container__landingpage--newsletter {
+  display: flex;
+  align-items: start;
+}
+
+.customer-section__right {
+  color: $color-headline;
+}

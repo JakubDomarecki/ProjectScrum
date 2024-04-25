@@ -6,21 +6,30 @@
 
 .features {
   max-width: 100%;
-  margin: 100px auto 120px;
+  margin: 70px auto 70px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .features__icon {
   width: 50px;
   height: auto;
+  padding: 2rem;
 }
 
 .features__item {
-  max-width: 200px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   text-align: center;
+  & p {
+    color: $color-side
+  }
+}
+
+.h3__features {
+  font-size: 1.5rem;
+  color: $color-side
 }

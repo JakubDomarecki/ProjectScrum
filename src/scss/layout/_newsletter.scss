@@ -1,0 +1,21 @@
+@import "../variables/colours";
+@import "../variables/fonts";
+
+.h3__newsletter {
+  font-size: 2rem;
+}
+
+input[type="email"] {
+  padding: 14px;
+  border: 1px solid $color-text-rows;
+  width: 250px;
+
+}
+
+.newsletter__form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 21px;
+}
+
+
