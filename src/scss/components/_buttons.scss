@@ -1,11 +1,23 @@
 @import "../variables/colours";
 @import "../variables/fonts";
 
-.button__orange--cta {
+
+.button__orange {
   background-color: $color-buttons;
   color: $color-background;
-  border: none;
-  padding: 7px 14px 7px 14px;
-  margin-bottom: 16px;
-//  font-family: $;
+  padding: 14px 28px 14px 28px;
+  border: 1px solid transparent;
+
+  &--cta {
+    margin-bottom: 28px;
+    padding-inline: 28px;
+  }
+
+  &--footer {
+    padding: 3.5px;
+  }
 }
+
+button {
+padding-inline: 0;
+};

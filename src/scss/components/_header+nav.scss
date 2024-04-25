@@ -1,0 +1,62 @@
+@import "../variables/colours";
+@import "../variables/fonts";
+
+
+.header__nav-app {
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.nav__sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 79.66px;
+  left: 0;
+  background-color: $color-side;
+}
+
+.nav__sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-block: 0;
+  padding-inline-start: 0;
+
+}
+
+.nav__sidebar ul li a {
+  display: flex;
+  padding: 1rem 1rem 1rem 2rem ;
+  text-decoration: none;
+  text-align: left;
+  border-left: 0.5rem solid transparent;
+  cursor: pointer;
+  justify-content: space-between;
+  //align-items: center;
+}
+
+.nav__sidebar ul li a::after {
+  content: url('../../icons/angle-right-solid.svg');
+  height: 1rem;
+  width: 1rem;
+  display: none;
+}
+
+.nav__sidebar ul li a.active {
+  border-left: 0.5rem solid $color-buttons;
+}
+
+.nav__sidebar ul li a.active::after {
+  display: inline-block;
+}
+
+.nav__sidebar__button {
+  font-weight: 400;
+  font-family: $text-font;
+  font-size: 1.5rem;
+}
+
+.user__icon {
+  height: 2em;
+  width: auto;
+}

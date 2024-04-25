@@ -25,20 +25,6 @@ const info = document.querySelector('#right__31');
 const warr = document.querySelector('#right__32');
 const check = document.querySelector('#right__33');
 
-// pasek nawigacji, jak spada niżej to przestaje działać
-document.addEventListener('DOMContentLoaded', function() {
-  let currentUrl = window.location.pathname.split('/').pop();
-  // console.log(currentUrl);
-  let links = document.querySelectorAll('.nav__sidebar__button');
-  // console.log(links);
-  links.forEach(function(link) {
-    let href = link.getAttribute('href');
-    if (href === currentUrl) {
-      link.classList.add('active');
-    }
-  });
-});
-
 // logowanie
 let savedName = localStorage.getItem('savedName');
 
@@ -71,6 +57,19 @@ recipesHide?.addEventListener('click', function (event) {
   addRecipesOverlay.classList.toggle('ukryteMiddle');
 });
 
+// pasek nawigacji, jak spada niżej to przestaje działać
+document.addEventListener('DOMContentLoaded', function() {
+  let currentUrl = window.location.pathname.split('/').pop();
+  // console.log(currentUrl);
+  let links = document.querySelectorAll('.nav__sidebar__button');
+  // console.log(links);
+  links.forEach(function(link) {
+    let href = link.getAttribute('href');
+    if (href === currentUrl) {
+      link.classList.add('active');
+    }
+  });
+});
 
 // ukrywanie + pokazanie dodawania planu
 schedulesAdd?.addEventListener('click', function(event) {
