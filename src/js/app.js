@@ -28,7 +28,7 @@ const selects = document.querySelectorAll('.food');
 const SavePlan = document.querySelector(".schedules_form_header_buttton");
 
 
-// // logowanie
+// logowanie //
 let savedName = localStorage.getItem('savedName');
 
 if (savedName) {
@@ -54,13 +54,7 @@ pokazDashboard?.addEventListener('click', function(event) {
   }
 });
 
-// ukrywanie okna przepisu
-recipesHide?.addEventListener('click', function (event) {
-  recipesOverlay.classList.add('ukryteMiddle');
-  addRecipesOverlay.classList.toggle('ukryteMiddle');
-});
-
-// pasek nawigacji, jak spada niżej to przestaje działać
+// pasek nawigacji, jak spada niżej to przestaje działać //
 document.addEventListener('DOMContentLoaded', function() {
   let currentUrl = window.location.pathname.split('/').pop();
   // console.log(currentUrl);
@@ -74,6 +68,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// ukrywanie okna przepisu
+recipesHide?.addEventListener('click', function (event) {
+  recipesOverlay.classList.add('ukryteMiddle');
+  addRecipesOverlay.classList.toggle('ukryteMiddle');
+});
+
 // ukrywanie + pokazanie dodawania planu
 schedulesAdd?.addEventListener('click', function(event) {
   scheduleList.classList.add('new-plan-display-none');
@@ -81,57 +81,70 @@ schedulesAdd?.addEventListener('click', function(event) {
 });
 
 // dodawanie ilości przepisów -test counter coś tam
-function addRecipes() {
-  // Pobierz aktualną liczbę przepisów z Local Storage
-  let liczbaPrzepisow = localStorage.getItem('liczbaPrzepisow');
-
-  // Jeśli liczba przepisów nie istnieje, ustaw ją na 0
-  if (!liczbaPrzepisow) {
-    liczbaPrzepisow = 0;
-  } else {
-    // Jeśli istnieje, przekonwertuj ją na liczbę
-    liczbaPrzepisow = parseInt(liczbaPrzepisow);
-  }
-
-  // Dodaj nowy przepis
-  liczbaPrzepisow++;
-
-  // Zapisz aktualną liczbę przepisów do Local Storage
-  localStorage.setItem('liczbaPrzepisow', 'liczbaPrzepisow');
-
-  // Ustaw tekst informacyjny
-  infoText.innerText = `Masz już ${liczbaPrzepisow} przepisów, nieźle!`;
-
-  return liczbaPrzepisow;
-}
 //
+// console red!!!
+//
+// function addRecipes() {
+//   // Pobierz aktualną liczbę przepisów z Local Storage
+//   let liczbaPrzepisow = localStorage.getItem('liczbaPrzepisow');
+//
+//   // Jeśli liczba przepisów nie istnieje, ustaw ją na 0
+//   if (!liczbaPrzepisow) {
+//     liczbaPrzepisow = 0;
+//   } else {
+//     // Jeśli istnieje, przekonwertuj ją na liczbę
+//     liczbaPrzepisow = parseInt(liczbaPrzepisow);
+//   }
+
+// // Dodaj nowy przepis
+//
+// // console red!!!
+//
+//   liczbaPrzepisow++;
+//
+//   // Zapisz aktualną liczbę przepisów do Local Storage
+//   localStorage.setItem('liczbaPrzepisow', 'liczbaPrzepisow');
+//
+//   // Ustaw tekst informacyjny
+//   infoText.innerText = `Masz już ${liczbaPrzepisow} przepisów, nieźle!`;
+//
+//   return liczbaPrzepisow;
+// }
+
 // Dodaj obsługę zdarzenia "click" dla elementu infoText
 infoText?.addEventListener("click", function(event) {
   addRecipes();
 });
-//
-// Wywołaj funkcję addRecipes() podczas załadowania strony
-window.onload = function() {
-  addRecipes();
-};
-//
-// zamykanie powiadomień na app.html
 
-closeBtn1.addEventListener('click', function (event){
+
+//
+// // Wywołaj funkcję addRecipes() podczas załadowania strony
+//
+// // console red!!!
+//
+// window.onload = function() {
+//   addRecipes();
+// };
+
+// zamykanie powiadomień na app.html
+closeBtn1?.addEventListener('click', function (event){
 info.classList.add('ukryteMiddle');
 });
-closeBtn2.addEventListener('click', function (event){
+closeBtn2?.addEventListener('click', function (event){
 warr.classList.add('ukryteMiddle');
 });
-closeBtn3.addEventListener('click', function (event){
+closeBtn3?.addEventListener('click', function (event){
 check.classList.add('ukryteMiddle');
 });
 
 //tekst planu na app.html
 
-nrTyg.innerText = `Twój plan na  ten tydzień: `;
+// nrTyg.innerText = `Twój plan na  ten tydzień: `;
+//
+// console red na schedules i recipes
+
 let counter = 0;
-prevBtn.addEventListener('click', function (event){
+prevBtn?.addEventListener('click', function (event){
   if (counter <= 0) {
     alert('brak poprzednich planów');
 
@@ -140,19 +153,19 @@ prevBtn.addEventListener('click', function (event){
   }
   nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
 });
-nextBtn.addEventListener('click', function (event){
+nextBtn?.addEventListener('click', function (event){
   counter += 1;
   nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
 });
 
-// Dodawanie przepisu
-dodajPrzepis?.addEventListener('click', function(event) {
-  pokazPrzepis.classList.toggle('ukrytePrzepis');
-});
-dodajPlan?.addEventListener('click', function(event) {
-  pokazPlan.classList.toggle('ukrytePlan');
-});
-
+//
+// // // Dodawanie przepisu
+// // dodajPrzepis?.addEventListener('click', function(event) {
+// //   pokazPrzepis.classList.toggle('ukrytePrzepis');
+// // });
+// // dodajPlan?.addEventListener('click', function(event) {
+// //   pokazPlan.classList.toggle('ukrytePlan');
+// // });
 
 let addSchedulesTitle = document.getElementById("addSchedulesTitle");
 let addSchedulesDescription = document.getElementById("addSchedulesDescription");
@@ -206,36 +219,37 @@ function loadScheduleValuesFromLocalStorage() {
 // Wywołanie funkcji ładowania danych przy ładowaniu strony
 window.addEventListener("load", loadScheduleValuesFromLocalStorage);
 
-// Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
-addSchedulesSave.addEventListener("click", function(e) {
-  e.preventDefault();
-  const newScheduleValue = {
-    title: addSchedulesTitle.value,
-    description: addSchedulesDescription.value,
-    number: addSchedulesNumber.value
-  };
-  saveScheduleValueToLocalStorage(newScheduleValue);
-  console.log("Zapisano: ", newScheduleValue);
-  window.location.href = "schedules.html"; // Przekierowanie do strony schedules.html
-});
+// // Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
+// addSchedulesSave.addEventListener("click", function(e) {
+//   e.preventDefault();
+//   const newScheduleValue = {
+//     title: addSchedulesTitle.value,
+//     description: addSchedulesDescription.value,
+//     number: addSchedulesNumber.value
+//   };
+  // saveScheduleValueToLocalStorage(newScheduleValue);
+  // console.log("Zapisano: ", newScheduleValue);
+  // window.location.href = "schedules.html"; // Przekierowanie do strony schedules.html
 
-// ściąganie informacji z select option
-// Pobierz wszystkie elementy select w tabeli
-
-// let selectedOptionsValues = [];
 //
-// selects.forEach(select => {
-//   const selectedOption = select.querySelector('option:checked');
-//   if (selectedOption) {
-//     selectedOptionsValues.push(selectedOption.value);
-//   }
-// });
 //
-// localStorage.setItem('selectedOptionsValues', JSON.stringify(selectedOptionsValues));
-
-// zamyka towrzenie planu i pokazuje liste
-// SavePlan.addEventListener("click", function(e) {
-//   scheduleList.classList.remove('new-plan-display-none');
-//   newSchedule.classList.add('new-plan-display-none');
+// // ściąganie informacji z select option
+// // Pobierz wszystkie elementy select w tabeli
 //
-// });
+// // let selectedOptionsValues = [];
+// //
+// // selects.forEach(select => {
+// //   const selectedOption = select.querySelector('option:checked');
+// //   if (selectedOption) {
+// //     selectedOptionsValues.push(selectedOption.value);
+// //   }
+// // });
+// //
+// // localStorage.setItem('selectedOptionsValues', JSON.stringify(selectedOptionsValues));
+//
+// // zamyka towrzenie planu i pokazuje liste
+// // SavePlan.addEventListener("click", function(e) {
+// //   scheduleList.classList.remove('new-plan-display-none');
+// //   newSchedule.classList.add('new-plan-display-none');
+// //
+// // });
