@@ -168,17 +168,19 @@ nextBtn?.addEventListener('click', function(event) {
 // //   pokazPlan.classList.toggle('ukrytePlan');
 // // });
 
-// kod działa tylko dla schedules.html
-document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL strony to "schedules.html"?
-  if (window.location.pathname.includes('schedules.html')) {             // Jeśli tak to ten kod działa.
+/// Kod działa tylko dla schedules.html
+document.addEventListener('DOMContentLoaded', function() {
+  // Czy aktualny URL strony to "schedules.html"?
+  if (window.location.pathname.includes('schedules.html')) {
+    // Jeśli tak, ten kod działa.
 
-    // logika przepisu
+    // Logika przepisu
     const addSchedulesTitle = document.getElementById('addSchedulesTitle');
     const addSchedulesDescription = document.getElementById('addSchedulesDescription');
     const addSchedulesNumber = document.getElementById('addSchedulesNumber');
     const addSchedulesSave = document.getElementById('addSchedulesSave');
 
-// Zapisywania planu do localStorage
+    // Zapisywanie planu do localStorage
     function saveScheduleValueToLocalStorage(newObject) {
       const dataFromLocalStorage = JSON.parse(localStorage.getItem('schedules')) || [];
       dataFromLocalStorage.push(newObject);
@@ -186,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
       alert('Plan zapisany do localStorage.');
     }
 
-// Ładowania danych z localStorage i wyświetlania ich w tabeli
+    // Ładowanie danych z localStorage i wyświetlanie ich w tabeli
     function loadScheduleValuesFromLocalStorage() {
       const dataFromLocalStorage = JSON.parse(localStorage.getItem('schedules')) || [];
       const schedulesList = document.getElementById('schedulesList');
@@ -213,16 +215,37 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
         newRow.appendChild(numberCell);
 
         const actionsCell = document.createElement('td');
-        actionsCell.innerHTML = '<button>Edit</button><button>Delete</button>';
-        newRow.appendChild(actionsCell);
+        //do podmiany na działający przycisk jak niżej delete
+        actionsCell.innerHTML = '<button class="button_clear"><img class="icon__add--table" src="../icons/pen-to-square-solid.svg" alt="Edit">';
+
+        // przycisk delete + logika
+        const deleteButton = document.createElement('buttonDelete');
+        deleteButton.classList.add('button__delete');
+        deleteButton.innerHTML = '<img class="icon__add--table" src="../icons/trash-can-solid.svg" alt="Delete">';
+        deleteButton.addEventListener('click', function() {
+          // Usuwam plan z localStorage
+          dataFromLocalStorage.splice(index, 1);
+          localStorage.setItem('schedules', JSON.stringify(dataFromLocalStorage));
+          // Usuwam wiersz z tabeli
+          schedulesList.removeChild(newRow);
+        });
+
+
+
+        //tworze wiersz z danymi z localStorage
         schedulesList.appendChild(newRow);
+        // dodaje przyciski akcji (edit/delete) po dodadnie przycisku edit do usunięcia
+        newRow.appendChild(actionsCell);
+        // dodaje przycisk delete
+        actionsCell.appendChild(deleteButton);
+
       });
     }
 
-// Wywołanie funkcji ładowania danych przy ładowaniu strony
+    // Wywołanie funkcji ładowania danych przy ładowaniu strony
     window.addEventListener('load', loadScheduleValuesFromLocalStorage);
 
-// Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
+    // Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
     addSchedulesSave?.addEventListener('click', function(e) {
       e.preventDefault();
       const newScheduleValue = {
@@ -236,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
     });
   }
 });
+
 
 //
 // // ściąganie informacji z select option

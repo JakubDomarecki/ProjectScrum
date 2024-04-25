@@ -21,3 +21,13 @@
 button {
 padding-inline: 0;
 };
+
+.button_clear {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
