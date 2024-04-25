@@ -76,8 +76,8 @@ recipesHide?.addEventListener('click', function (event) {
 
 // ukrywanie + pokazanie dodawania planu
 schedulesAdd?.addEventListener('click', function(event) {
-  scheduleList.classList.add('new-plan-display-none');
-  newSchedule.classList.remove('new-plan-display-none');
+  scheduleList?.classList.add('new-plan-display-none');
+  newSchedule?.classList.remove('new-plan-display-none');
 });
 
 // dodawanie ilości przepisów -test counter coś tam
@@ -231,7 +231,7 @@ window.addEventListener("load", loadScheduleValuesFromLocalStorage);
   // console.log("Zapisano: ", newScheduleValue);
   // window.location.href = "schedules.html"; // Przekierowanie do strony schedules.html
 
-//
+//git
 //
 // // ściąganie informacji z select option
 // // Pobierz wszystkie elementy select w tabeli
