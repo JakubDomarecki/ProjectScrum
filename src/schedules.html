@@ -60,33 +60,40 @@
           <th>AKCJE</th>
         </tr>
         </thead>
-        <tbody id="scheduleList">
+
+        <tbody id="schedulesList scheduleList">
+
         </tbody>
       </table>
     </div>
 
     <div class="new-plan-display-none  new-plan-display">
-        <div class="schedules_form">
-          <div class="schedules_form_header">
-            <h2 class="schedules_form_header_h2">NOWY PLAN</h2>
-            <button class="schedules_form_header_buttton">Zapisz i zamknij</button>
-          </div>
+      <div class="schedules_form">
+        <div class="schedules_form_header">
+          <h2 class="schedules_form_header_h2">NOWY PLAN</h2>
+          <button id="addSchedulesSave" class="schedules_form_header_button">Zapisz i zamknij</button>
         </div>
-        <div class="schedules_form_buttons" >
+      </div>
+
+      <form novalidate>
+        <div class="schedules_form_buttons">
           <div class="schedules_form_name">
             <label class="schedules_label schedules_label1">Nazwa planu</label>
-            <input type="text" class="schedules_input1">
+            <input id="addSchedulesTitle" type="text" placeholder="Nazwa nowego planu" required
+                   class="schedules_input1">
           </div>
           <div class="schedules_form_description">
             <label class="schedules_label schedules_label2">Opis planu</label>
-            <textarea class="schedules_input2" ></textarea>
+            <textarea id="addSchedulesDescription" type="text" placeholder="Opis nowego planu" required
+                      class="schedules_input2"></textarea>
           </div>
           <div class="schedules_form_number">
             <label class="schedules_label schedules_label3">Numer tygodnia</label>
-            <input type="number" class="schedules_input3">
+            <input id="addSchedulesNumber" type="number" placeholder="Opis nowego planu" required
+                   class="schedules_input3">
           </div>
         </div>
-
+      </form>
         <table class="schedules_table">
           <thead>
           <th class="th_none"></th>
@@ -401,6 +408,7 @@
           </tbody>
         </table>
     </div>
+
   </div>
 </main>
 

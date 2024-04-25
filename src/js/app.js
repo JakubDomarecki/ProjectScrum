@@ -116,6 +116,7 @@ schedulesAdd?.addEventListener('click', function(event) {
 // };
 //
 // zamykanie powiadomień na app.html
+
 // closeBtn1.addEventListener('click', function (event){
 // info.classList.add('ukryteMiddle');
 // });
@@ -127,6 +128,7 @@ schedulesAdd?.addEventListener('click', function(event) {
 // });
 
 //tekst planu na app.html
+
 // nrTyg.innerText = `Twój plan na  ten tydzień: `;
 // let counter = 0;
 // prevBtn.addEventListener('click', function (event){
@@ -152,6 +154,70 @@ schedulesAdd?.addEventListener('click', function(event) {
 // });
 
 
+let addSchedulesTitle = document.getElementById("addSchedulesTitle");
+let addSchedulesDescription = document.getElementById("addSchedulesDescription");
+let addSchedulesNumber = document.getElementById("addSchedulesNumber");
+let addSchedulesSave = document.getElementById("addSchedulesSave");
+
+// Funkcja zapisywania planu do localStorage
+function saveScheduleValueToLocalStorage(newObject) {
+  let dataFromLocalStorage = JSON.parse(localStorage.getItem("schedules")) || [];
+  dataFromLocalStorage.push(newObject);
+  localStorage.setItem("schedules", JSON.stringify(dataFromLocalStorage));
+  alert("Plan zapisany do localStorage.");
+}
+
+// Funkcja do ładowania danych z localStorage i wyświetlania ich w tabeli
+function loadScheduleValuesFromLocalStorage() {
+  let dataFromLocalStorage = JSON.parse(localStorage.getItem("schedules")) || [];
+  let schedulesList = document.getElementById("schedulesList");
+
+  dataFromLocalStorage.forEach((schedule, index) => {
+
+    // Tworzymy nowy wiersz tabeli
+    let newRow = document.createElement("tr");
+
+    // Kolumna ID
+    let idCell = document.createElement("td");
+    idCell.textContent = index.toString();
+    newRow.appendChild(idCell);
+
+    // Kolumna tytuł
+    let titleCell = document.createElement("td");
+    titleCell.textContent = schedule.title;
+    newRow.appendChild(titleCell);
+
+    // Kolumna opis
+    let descriptionCell = document.createElement("td");
+    descriptionCell.textContent = schedule.description;
+    newRow.appendChild(descriptionCell);
+
+    // Kolumna numer
+    let numberCell = document.createElement("td");
+    numberCell.textContent = schedule.number;
+    newRow.appendChild(numberCell);
+
+    // Kolumna akcje
+
+    // Dodaj wiersz do tabeli
+    schedulesList.appendChild(newRow);
+  });
+}
+// Wywołanie funkcji ładowania danych przy ładowaniu strony
+window.addEventListener("load", loadScheduleValuesFromLocalStorage);
+
+// Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
+addSchedulesSave.addEventListener("click", function(e) {
+  e.preventDefault();
+  const newScheduleValue = {
+    title: addSchedulesTitle.value,
+    description: addSchedulesDescription.value,
+    number: addSchedulesNumber.value
+  };
+  saveScheduleValueToLocalStorage(newScheduleValue);
+  console.log("Zapisano: ", newScheduleValue);
+  window.location.href = "schedules.html"; // Przekierowanie do strony schedules.html
+
 
 // ściąganie informacji z select option
 // Pobierz wszystkie elementy select w tabeli
@@ -171,4 +237,5 @@ localStorage.setItem('selectedOptionsValues', JSON.stringify(selectedOptionsValu
 SavePlan.addEventListener("click", function(e) {
   scheduleList.classList.remove('new-plan-display-none');
   newSchedule.classList.add('new-plan-display-none');
+
 });
