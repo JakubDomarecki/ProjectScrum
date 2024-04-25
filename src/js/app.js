@@ -68,16 +68,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// ukrywanie okna przepisu
+// ukrywanie okna przepisu //
 recipesHide?.addEventListener('click', function (event) {
   recipesOverlay.classList.add('ukryteMiddle');
   addRecipesOverlay.classList.toggle('ukryteMiddle');
 });
 
-// ukrywanie + pokazanie dodawania planu
+// ukrywanie + pokazanie dodawania planu //
 schedulesAdd?.addEventListener('click', function(event) {
-  scheduleList.classList.add('new-plan-display-none');
-  newSchedule.classList.remove('new-plan-display-none');
+  scheduleList?.classList.add('new-plan-display-none');
+  newSchedule?.classList.remove('new-plan-display-none');
 });
 
 // dodawanie ilości przepisów -test counter coś tam
