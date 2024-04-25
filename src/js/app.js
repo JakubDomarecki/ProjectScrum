@@ -10,13 +10,13 @@ const recipesInput = document.querySelector('.recipes_input');
 const headerName = document.querySelector('.header_name');
 const prevBtn = document.querySelector('#prev__dni');
 const nextBtn = document.querySelector('#next__dni');
-const nrTyg = document.querySelector("#nr__tygodnia");
-const infoText = document.querySelector(".info_text");
+const nrTyg = document.querySelector('#nr__tygodnia');
+const infoText = document.querySelector('.info_text');
 const recipesOverlay = document.querySelector('.app_container_hide');
 const recipesHide = document.querySelector('#app_containerHide');
 const addRecipesOverlay = document.querySelector('.add_recipes');
-const schedulesAdd = document.querySelector(".icon__add");
-const scheduleList = document.querySelector(".lista_planow_display");
+const schedulesAdd = document.querySelector('.icon__add');
+const scheduleList = document.querySelector('.lista_planow_display');
 const newSchedule = document.querySelector('.new-plan-display');
 const closeBtn1 = document.querySelector('.info_btn');
 const closeBtn2 = document.querySelector('.alert_btn');
@@ -25,7 +25,7 @@ const info = document.querySelector('#right__31');
 const warr = document.querySelector('#right__32');
 const check = document.querySelector('#right__33');
 const selects = document.querySelectorAll('.food');
-const SavePlan = document.querySelector(".schedules_form_header_buttton");
+const SavePlan = document.querySelector('.schedules_form_header_buttton');
 
 
 // logowanie //
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ukrywanie okna przepisu //
-recipesHide?.addEventListener('click', function (event) {
+recipesHide?.addEventListener('click', function(event) {
   recipesOverlay.classList.add('ukryteMiddle');
   addRecipesOverlay.classList.toggle('ukryteMiddle');
 });
@@ -112,7 +112,7 @@ schedulesAdd?.addEventListener('click', function(event) {
 // }
 
 // Dodaj obsługę zdarzenia "click" dla elementu infoText
-infoText?.addEventListener("click", function(event) {
+infoText?.addEventListener('click', function(event) {
   addRecipes();
 });
 
@@ -127,35 +127,36 @@ infoText?.addEventListener("click", function(event) {
 // };
 
 // zamykanie powiadomień na app.html
-closeBtn1?.addEventListener('click', function (event){
-info.classList.add('ukryteMiddle');
+closeBtn1?.addEventListener('click', function(event) {
+  info.classList.add('ukryteMiddle');
 });
-closeBtn2?.addEventListener('click', function (event){
-warr.classList.add('ukryteMiddle');
+closeBtn2?.addEventListener('click', function(event) {
+  warr.classList.add('ukryteMiddle');
 });
-closeBtn3?.addEventListener('click', function (event){
-check.classList.add('ukryteMiddle');
+closeBtn3?.addEventListener('click', function(event) {
+  check.classList.add('ukryteMiddle');
 });
 
-//tekst planu na app.html
+document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL strony to "app.html"?
+  if (window.location.pathname.includes('app.html')) {
+nrTyg.innerText = `Twój plan na  ten tydzień: `;
+  }
+});
 
-// nrTyg.innerText = `Twój plan na  ten tydzień: `;
-//
-// console red na schedules i recipes
 
 let counter = 0;
-prevBtn?.addEventListener('click', function (event){
+prevBtn?.addEventListener('click', function(event) {
   if (counter <= 0) {
     alert('brak poprzednich planów');
 
-  }  else {
+  } else {
     counter -= 1;
   }
-  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+  nrTyg.innerText = `Twój plan na  ${counter} tydzień: `;
 });
-nextBtn?.addEventListener('click', function (event){
+nextBtn?.addEventListener('click', function(event) {
   counter += 1;
-  nrTyg.innerText =  `Twój plan na  ${counter} tydzień: `;
+  nrTyg.innerText = `Twój plan na  ${counter} tydzień: `;
 });
 
 //
@@ -167,71 +168,75 @@ nextBtn?.addEventListener('click', function (event){
 // //   pokazPlan.classList.toggle('ukrytePlan');
 // // });
 
-let addSchedulesTitle = document.getElementById("addSchedulesTitle");
-let addSchedulesDescription = document.getElementById("addSchedulesDescription");
-let addSchedulesNumber = document.getElementById("addSchedulesNumber");
-let addSchedulesSave = document.getElementById("addSchedulesSave");
+// kod działa tylko dla schedules.html
+document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL strony to "schedules.html"?
+  if (window.location.pathname.includes('schedules.html')) {             // Jeśli tak to ten kod działa.
 
-// Funkcja zapisywania planu do localStorage
-function saveScheduleValueToLocalStorage(newObject) {
-  let dataFromLocalStorage = JSON.parse(localStorage.getItem("schedules")) || [];
-  dataFromLocalStorage.push(newObject);
-  localStorage.setItem("schedules", JSON.stringify(dataFromLocalStorage));
-  alert("Plan zapisany do localStorage.");
-}
-//
-// // Funkcja do ładowania danych z localStorage i wyświetlania ich w tabeli
-function loadScheduleValuesFromLocalStorage() {
-  let dataFromLocalStorage = JSON.parse(localStorage.getItem("schedules")) || [];
-  let schedulesList = document.getElementById("schedulesList");
+    // logika przepisu
+    const addSchedulesTitle = document.getElementById('addSchedulesTitle');
+    const addSchedulesDescription = document.getElementById('addSchedulesDescription');
+    const addSchedulesNumber = document.getElementById('addSchedulesNumber');
+    const addSchedulesSave = document.getElementById('addSchedulesSave');
 
-  dataFromLocalStorage.forEach((schedule, index) => {
-//
-//     // Tworzymy nowy wiersz tabeli
-    let newRow = document.createElement("tr");
-//
-//     // Kolumna ID
-    let idCell = document.createElement("td");
-    idCell.textContent = index.toString();
-    newRow.appendChild(idCell);
-//
-//     // Kolumna tytuł
-    let titleCell = document.createElement("td");
-    titleCell.textContent = schedule.title;
-    newRow.appendChild(titleCell);
-//
-    // Kolumna opis
-    let descriptionCell = document.createElement("td");
-    descriptionCell.textContent = schedule.description;
-    newRow.appendChild(descriptionCell);
+// Zapisywania planu do localStorage
+    function saveScheduleValueToLocalStorage(newObject) {
+      const dataFromLocalStorage = JSON.parse(localStorage.getItem('schedules')) || [];
+      dataFromLocalStorage.push(newObject);
+      localStorage.setItem('schedules', JSON.stringify(dataFromLocalStorage));
+      alert('Plan zapisany do localStorage.');
+    }
 
-    // Kolumna numer
-    let numberCell = document.createElement("td");
-    numberCell.textContent = schedule.number;
-    newRow.appendChild(numberCell);
+// Ładowania danych z localStorage i wyświetlania ich w tabeli
+    function loadScheduleValuesFromLocalStorage() {
+      const dataFromLocalStorage = JSON.parse(localStorage.getItem('schedules')) || [];
+      const schedulesList = document.getElementById('schedulesList');
 
-    // Kolumna akcje
+      schedulesList.innerHTML = '';  // Czyszczenie tabeli przed dodaniem nowych danych
 
-    // Dodaj wiersz do tabeli
-    schedulesList.appendChild(newRow);
-  });
-}
+      dataFromLocalStorage.forEach((schedule, index) => {
+        const newRow = document.createElement('tr');
+
+        const idCell = document.createElement('td');
+        idCell.textContent = (index + 1).toString();
+        newRow.appendChild(idCell);
+
+        const titleCell = document.createElement('td');
+        titleCell.textContent = schedule.title;
+        newRow.appendChild(titleCell);
+
+        const descriptionCell = document.createElement('td');
+        descriptionCell.textContent = schedule.description;
+        newRow.appendChild(descriptionCell);
+
+        const numberCell = document.createElement('td');
+        numberCell.textContent = schedule.number;
+        newRow.appendChild(numberCell);
+
+        const actionsCell = document.createElement('td');
+        actionsCell.innerHTML = '<button>Edit</button><button>Delete</button>';
+        newRow.appendChild(actionsCell);
+        schedulesList.appendChild(newRow);
+      });
+    }
+
 // Wywołanie funkcji ładowania danych przy ładowaniu strony
-window.addEventListener("load", loadScheduleValuesFromLocalStorage);
+    window.addEventListener('load', loadScheduleValuesFromLocalStorage);
 
-// // Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
-// addSchedulesSave.addEventListener("click", function(e) {
-//   e.preventDefault();
-//   const newScheduleValue = {
-//     title: addSchedulesTitle.value,
-//     description: addSchedulesDescription.value,
-//     number: addSchedulesNumber.value
-//   };
-  // saveScheduleValueToLocalStorage(newScheduleValue);
-  // console.log("Zapisano: ", newScheduleValue);
-  // window.location.href = "schedules.html"; // Przekierowanie do strony schedules.html
+// Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
+    addSchedulesSave?.addEventListener('click', function(e) {
+      e.preventDefault();
+      const newScheduleValue = {
+        title: addSchedulesTitle.value,
+        description: addSchedulesDescription.value,
+        number: addSchedulesNumber.value,
+      };
+      saveScheduleValueToLocalStorage(newScheduleValue);
+      console.log('Zapisano: ', newScheduleValue);
+      window.location.href = 'schedules.html'; // Przekierowanie do strony schedules.html
+    });
+  }
+});
 
-//git
 //
 // // ściąganie informacji z select option
 // // Pobierz wszystkie elementy select w tabeli
