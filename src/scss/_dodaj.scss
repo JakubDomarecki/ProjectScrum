@@ -6,6 +6,8 @@
   height: 1rem;
 }
 
+
+
 .przepis__text {
   color:$color-message-success ;
 }
@@ -34,7 +36,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
 }
 
 .icon {
@@ -50,7 +53,7 @@
 .right__3 {
   height: 12rem;
   flex-direction: column;
-  margin: 2rem;
+ margin-top: 1rem;
 
 }
 .right__31 {
@@ -62,21 +65,25 @@
   background-color: #fff;
   border: 0.3rem dashed grey;
   padding: 0.9rem;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
 }
 
 .info {
   border-color:$color-message-info ;
   height: 2rem;
   width: 2rem;
+
 }
 
 .info_btn {
   background-color: $color-message-info;
   color: white;
-  display: flex;
-  justify-content:flex-end;
   border-radius: 5px;
   border: none  ;
+  padding-inline: 0.3rem;
 }
 
 .info_text {
@@ -115,6 +122,7 @@
   justify-content:flex-end;
   border-radius: 5px;
   border: none  ;
+  padding-inline: 0.3rem;
 }
 
 .right__33 {
@@ -146,6 +154,7 @@
   justify-content:flex-end;
   border-radius: 5px;
   border: none  ;
+  padding-inline: 0.3rem;
 }
 
 button:hover {
@@ -161,23 +170,14 @@ button:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.middle {
- display: flex;
-  color: $color-message-success;
-  height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .ukryteMiddle{
   display: none;
 }
 
-.przepis {
-  width: 200px;
-  height: 200px;
-  background-color: blue;
-}
 
 .ukrytePrzepis  {
 display: none;
@@ -186,26 +186,30 @@ display: none;
 .ukrytePlan {
 display: none;
 }
+.btns__notifications {
 
-.dashboard__srodek {
   display: flex;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  justify-content: space-between;
+  height: 15rem;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+
+}
+.dashboard__srodek {
+ flex-wrap: wrap;
+  display: flex;
+
 }
 
-.plan {
-  height: 200px;
-  background-color: red;
-}
 
-.pokazsiekurwa {
+
+.plan__main {
   background-color: #fff;
-  position: absolute;
-  top: 17rem;
-  left: 6rem;
   color: gray;
-  width: 75%;
-  height: 37rem;
+  width: 100%;
+
   border: 0.3rem dashed gray;
 }
 
@@ -217,12 +221,14 @@ display: none;
   justify-content: space-evenly;
   border-bottom: 1px solid black;
 }
-
-.plan_item {
-  width: 10rem;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+.uppercase {
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+}
+td {
+ width: 2rem;
+  height: 4rem;
 }
 
 .sniadanie{
@@ -264,7 +270,7 @@ display: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid black;
+
   height: 4rem;
 }
 
@@ -280,4 +286,5 @@ display: none;
   margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
+  padding: 0.7rem;
 }
