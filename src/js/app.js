@@ -34,11 +34,12 @@ const instructionsInput = document.querySelector('.instructions__input');
 const ingridientsInput = document.querySelector('.ingridients__input');
 const saveRecipe = document.querySelector('.togglerRecipes');
 const hideRecipeCreator = document.querySelector('.container__recipes');
-const tabela = document.querySelector('#recipeList');
+const recipeList = document.querySelector('#recipeList');
 const recipeName = document.querySelector('.recipes_input');
 const recipeDescription = document.querySelector('.recipes_input2');
 const recipeInTable = document.querySelector('.newRecipe');
 const headerName = document.querySelector(".header_name");
+
 
 // logowanie //
 // Sprawda czy wartość jest już w localStorage i ustaia ją
@@ -103,10 +104,10 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
 
 
       btn1.addEventListener('click', function (event) {
-        console.log(20)
+        console.log("edytuj")
       })
       btn2.addEventListener('click', function (event) {
-        console.log(10)
+        console.log("usun")
       })
 
 
@@ -142,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
       btn2.style.height = '15px';
       btn1.style.marginLeft = '5px'
       btn2.style.marginLeft = '5px'
+
 
 
     btn1.addEventListener('click', function (event) {
@@ -193,9 +195,6 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
   addRecipesOverlay?.classList.toggle('ukryteMiddle')
 
 
-
-
-
 })
 
     function saveRecipeValueToLocalStorage(newObject) {
@@ -211,26 +210,57 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
 
       recipeList.innerHTML = '';  // Czyszczenie tabeli przed dodaniem nowych danych
 
+
       dataFromLocalStorage.forEach((recipes, index) => {
         const newRow = document.createElement('tr');
 
-        const idCell2 = document.createElement('td');
-        idCell2.textContent = (index + 1).toString();
-        newRow.appendChild(idCell2);
 
-        const titleCell2 = document.createElement('td');
-        titleCell2.textContent = recipeName.title; // Use value property to get the input value
-        newRow.appendChild(titleCell2);
+        const idCell = document.createElement('td');
+        idCell.textContent = (index).toString();
+        newRow.appendChild(idCell);
+
+        const titleCell = document.createElement('td');
+        titleCell.textContent = recipes.title; // Use value property to get the input value
+        newRow.appendChild(titleCell);
 
         const descriptionCell = document.createElement('td');
-        descriptionCell.textContent = recipeDescription.description; // Use value property to get the input value
+        descriptionCell.textContent = recipes.description; // Use value property to get the input value
         newRow.appendChild(descriptionCell);
 
 
         const actionsCell = document.createElement('td');
-        actionsCell.innerHTML = '<button>Edit</button><button>Delete</button>';
-        newRow.appendChild(actionsCell);
+        // actionsCell.innerHTML = '<button>Edit</button><button>Delete</button>';
+        // newRow.appendChild(actionsCell);
+        // recipeList.appendChild(newRow);
+
+
+        const editButton = document.createElement('buttonEdit');
+        editButton.classList.add('button_edit');
+        editButton.innerHTML = '<img class="icon__add--table" src=../icons/pen-to-square-solid.svg alt="Edit">';
+        editButton.addEventListener('click', function() {
+
+
+        });
+        // // Przycisk usuwania
+        const deleteButton = document.createElement('buttonDelete');
+        deleteButton.classList.add('button__delete');
+        deleteButton.innerHTML = '<img class="icon__add--table" src="../icons/trash-can-solid.svg" alt="Delete">';
+        deleteButton.addEventListener('click', function() {
+          // Usuwanie planu z localStorage
+          dataFromLocalStorage.splice(index, 1);
+          localStorage.setItem('schedules', JSON.stringify(dataFromLocalStorage));
+          // Usuwanie wiersza z tabeli
+          recipeList.removeChild(newRow);
+        });
+        //
+        // //tworze wiersz z danymi z localStorage
         recipeList.appendChild(newRow);
+        // // dodaje przyciski akcji
+        newRow.appendChild(actionsCell);
+        // // dodaje przycisk delete
+        actionsCell.appendChild(editButton);
+        actionsCell.appendChild(deleteButton);
+
       });
     }
     window.addEventListener('load', loadRecipeValuesFromLocalStorage);
@@ -240,13 +270,14 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
     saveRecipe?.addEventListener('click', function(e) {
       e.preventDefault();
       const newScheduleValue = {
-        title: recipeName.value,
+        title: recipesInput.value,
         description: recipeDescription.value,
 
       };
       saveRecipeValueToLocalStorage(newScheduleValue);
-      console.log('Zapisano: ', newScheduleValue);
       window.location.href = 'recipes.html'; // Przekierowanie do strony recipe.html
+
+
     });
 
   }
