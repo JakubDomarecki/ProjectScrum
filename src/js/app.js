@@ -214,29 +214,32 @@ document.addEventListener('DOMContentLoaded', function() {
         numberCell.textContent = schedule.number;
         newRow.appendChild(numberCell);
 
-        const actionsCell = document.createElement('td');
-        //do podmiany na działający przycisk jak niżej delete
-        actionsCell.innerHTML = '<button class="button_clear"><img class="icon__add--table" src="../icons/pen-to-square-solid.svg" alt="Edit">';
+          const actionsCell = document.createElement('td');
+        //przycisk edit
 
-        // przycisk delete + logika
+        const editButton = document.createElement('buttonEdit');
+        editButton.classList.add('button_edit');
+        editButton.innerHTML = '<img class="icon__add--table" src=../icons/pen-to-square-solid.svg alt="Edit">';
+        editButton.addEventListener('click', function() {
+        });
+        // Przycisk usuwania
         const deleteButton = document.createElement('buttonDelete');
         deleteButton.classList.add('button__delete');
         deleteButton.innerHTML = '<img class="icon__add--table" src="../icons/trash-can-solid.svg" alt="Delete">';
         deleteButton.addEventListener('click', function() {
-          // Usuwam plan z localStorage
+          // Usuwanie planu z localStorage
           dataFromLocalStorage.splice(index, 1);
           localStorage.setItem('schedules', JSON.stringify(dataFromLocalStorage));
-          // Usuwam wiersz z tabeli
+          // Usuwanie wiersza z tabeli
           schedulesList.removeChild(newRow);
         });
 
-
-
         //tworze wiersz z danymi z localStorage
         schedulesList.appendChild(newRow);
-        // dodaje przyciski akcji (edit/delete) po dodadnie przycisku edit do usunięcia
+        // dodaje przyciski akcji
         newRow.appendChild(actionsCell);
         // dodaje przycisk delete
+        actionsCell.appendChild(editButton);
         actionsCell.appendChild(deleteButton);
 
       });
