@@ -3,3 +3,7 @@
 @import "../components/app__container";
 @import "../components/table";
 
+.recipes_name_warning, .recipes_description_warning{
+  color: red;
+  text-align: center;
+}
