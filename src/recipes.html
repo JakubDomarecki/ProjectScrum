@@ -8,22 +8,18 @@
   <link rel="stylesheet" href="scss/main.scss" />
 </head>
 <body>
-
+  
 <header>
   <div class="header__nav header__nav-app">
-
     <h1 class="logo">
       <a href="index.html">
         <span id="first">Zaplanuj</span>
         <span id="second">Jedzonko</span>
       </a>
     </h1>
-
     <div class="header__btns">
-
       <button class="header__button"><a href="#" class="header_name">Imię</a></button>
       <img class="user__icon" src="icons/circle-user-solid.svg" alt="User">
-
     </div>
   </div>
 </header>
@@ -40,167 +36,78 @@
       <a class="nav__sidebar__button" href="schedules.html">Plany</a>
     </li>
   </ul>
-</nav>
-<div class="ukryj main">
-<!--<main class="app__content">-->
-<!--  <div class="app__container app_container_hide">-->
-<!--    <div class="recipes__list__title  ">-->
-<!--      <h2>Lista Przepisów</h2>-->
-<!--      <button id="app_containerHide"><img class="icon__add" src="icons/square-plus-solid.svg" alt=""></button>-->
-<!--    </div>-->
-<!--    <table>-->
-<!--      <thead>-->
-<!--      <tr>-->
-<!--        <th>ID</th>-->
-<!--        <th>NAZWA</th>-->
-<!--        <th>OPIS</th>-->
-<!--        <th>AKCJE</th>-->
-<!--      </tr>-->
-<!--      </thead>-->
-<!--      <tbody id="recipeList">-->
-<!--      </tbody>-->
-<!--    </table>-->
-<!--  </div>-->
-<!--  <div class="add_recipes ukryteMiddle app_container">-->
-<!--    <div class="container__recipes">-->
-<!--      <div class="container__border">-->
-<!--    <div class="schedules_form">-->
-<!--      <div class="schedules_form_header">-->
-<!--        <h2 class="schedules_form_header_h2">NOWY PRZEPIS</h2>-->
-<!--        <button class="schedules_form_header_button">Zapisz i zamknij</button>-->
-<!--      </div>-->
+  </nav>
+  
+<main class="app__content">
+  <div class="app__container app_container_hide">
+    <div class="recipes__list__title  ">
+      <h2>Lista Przepisów</h2>
+      <button id="app_containerHide"><img class="icon__add" src="icons/square-plus-solid.svg" alt=""></button>
+    </div>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAZWA</th>
+        <th>OPIS</th>
+        <th>AKCJE</th>
+      </tr>
+      </thead>
+      <tbody id="recipeList">
+      <tr class="newRecipe"></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="add_recipes ukryteMiddle app_container">
+    <div class="container__recipes">
+      <div class="container__border">
+    <div class="schedules_form">
+      <div class="schedules_form_header">
+        <h2 class="schedules_form_header_h2">NOWY PRZEPIS</h2>
+        <button class="schedules_form_header_button togglerRecipes">Zapisz i zamknij</button>
+      </div>
 
-<!--      <div class="schedules_form_buttons">-->
-<!--        <div class="inputs_recipes">-->
-<!--        <div class="schedules_form_name">-->
-<!--          <label class="recipes_label recipes_label1">Nazwa przepisu</label>-->
-<!--          <input type="text" class="recipes_input">-->
-<!--        </div>-->
-<!--        <div class="schedules_form_description">-->
-<!--          <label class="recipes_label recipes_label2">Opis przepisu</label>-->
-<!--          <textarea type="text" class="recipes_input2"></textarea>-->
-<!--        </div>-->
-<!--        </div>-->
-<!--        <div class="recipes__downOverlay">-->
-<!--          <div class="instructions">-->
-<!--            <div class="border__down">INSTRUKCJE</div>-->
-<!--            <div class="ingridients__overlay">-->
-<!--              <textarea type="text" class="instructions__input"></textarea>-->
-<!--              <button class="plus_icon"><img class="img_size" src="icons/plus-solid1.svg" alt=""></button>-->
-<!--            </div>-->
-<!--            <div class="instructions__list">-->
-<!--              <ul class="instruction_list_ul">-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-
-
-<!--              </ul>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="ingridients">-->
-<!--            <div class="border__down">SKŁADNIKI</div>-->
-<!--            <div class="ingridients__overlay">-->
-<!--              <textarea type="text" class="ingridients__input"></textarea>-->
-<!--              <button class="plus_icon"><img class="img_size" src="icons/plus-solid1.svg" alt=""></button>-->
-<!--            </div>-->
-<!--            <div class="ingridients__list">-->
-<!--              <ul>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet consequatur, distinctio ex of-->
-<!--                  ficia similique. Adipisci architecto autem cupiditate, eius modi necessitatibus nostrum vel!-->
-<!--                  Consequatur-->
-<!--                  consequuntur dolore labore provident quam.-->
-<!--                </li>-->
-<!--              </ul>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--      </div>-->
-<!--  </div>-->
-
-<!--  <div class="add_recipes ukryteMiddle app__container">-->
-<!--  </div>-->
-<!--  </div>-->
-<!--</main>-->
+      <div class="schedules_form_buttons">
+        <div class="inputs_recipes">
+        <div class="schedules_form_name">
+          <label class="recipes_label recipes_label1">Nazwa przepisu</label>
+          <input type="text" class="recipes_input">
+        </div>
+        <div class="schedules_form_description">
+          <label class="recipes_label recipes_label2">Opis przepisu</label>
+          <textarea type="text" class="recipes_input2"></textarea>
+        </div>
+        </div>
+        <div class="recipes__downOverlay">
+          <div class="instructions">
+            <div class="border__down">INSTRUKCJE</div>
+            <div class="ingridients__overlay">
+              <textarea type="text" class="instructions__input"></textarea>
+              <button class="plus_icon"><img class="img_size" src="icons/plus-solid1.svg" alt=""></button>
+            </div>
+            <div class="instructions__list">
+              <ul class="instruction_list_ul">
+                <li class="list-instructions-item">Umyj ręce</li>
+              </ul>
+            </div>
+          </div>
+          <div class="ingridients">
+            <div class="border__down">SKŁADNIKI</div>
+            <div class="ingridients__overlay">
+              <textarea type="text" class="ingridients__input"></textarea>
+              <button class="plus_icon2"><img class="img_size" src="icons/plus-solid1.svg" alt=""></button>
+            </div>
+            <div class="ingridients__list">
+              <ul class="ingridients__list_ul">
+                <li class="list-ingridients-item">Potrzebne składniki:</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
-
 <script type="module" src="js/app.js"></script>
 </body>
 </html>
