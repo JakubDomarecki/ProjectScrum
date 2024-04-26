@@ -254,7 +254,7 @@ recipesHide?.addEventListener('click', function(event) {
         newObject.id = dataFromLocalStorage.length + 1;
         dataFromLocalStorage.push(newObject);
         localStorage.setItem('recipes', JSON.stringify(dataFromLocalStorage));
-        alert('dodano');
+        alert('dodano przepis');
       }
     }
 
@@ -507,6 +507,7 @@ document.addEventListener('DOMContentLoaded', function() {
         newObject.id = dataFromLocalStorage.length + 1;
         dataFromLocalStorage.push(newObject);
         localStorage.setItem('schedules', JSON.stringify(dataFromLocalStorage));
+        alert('dodano plan');
       }
     }
 
