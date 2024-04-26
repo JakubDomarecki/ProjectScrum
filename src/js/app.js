@@ -7,6 +7,7 @@ const pokazGuziki = document.querySelector('#middle');
 const schowajWelcome = document.querySelector('#recipes_form');
 const warning = document.querySelector('.recipes_p');
 const recipesInput = document.querySelector('.recipes_input');
+const loginInput = document.querySelector('.loginInput');
 const prevBtn = document.querySelector('#prev__dni');
 const nextBtn = document.querySelector('#next__dni');
 const nrTyg = document.querySelector('#nr__tygodnia');
@@ -42,20 +43,22 @@ const headerName = document.querySelector(".header_name");
 // logowanie //
 // Sprawda czy wartość jest już w localStorage i ustaia ją
 window.addEventListener('load', function() {
-  const savedValue = localStorage.getItem('recipesInputValue');
+  const savedValue = localStorage.getItem('login');
   if (savedValue) {
     headerName.innerText = savedValue;
     schowajWelcome?.classList.add('ukrtyeForm');
     pokazGuziki?.classList.remove('ukryteMiddle');
   }
 });
-// Zapisz wartość recipesInput.value do localStorage przy kliknięciu na pokazDashboard
+
+
+// Zapisz wartość loginInput do localStorage przy kliknięciu na pokazDashboard
 pokazDashboard?.addEventListener("click", function(e){
-  if(recipesInput.value === "") {
+  if(loginInput.value === "") {
     const errorMsg = document.getElementById('errorMsg').style.display = "block";
   } else {
-    localStorage.setItem('recipesInputValue', recipesInput.value);
-    headerName.innerText = recipesInput.value;
+    localStorage.setItem('login', loginInput.value);
+    headerName.innerText = loginInput.value;
     schowajWelcome?.classList.add('ukrtyeForm');
     pokazGuziki?.classList.remove('ukryteMiddle');
   }
