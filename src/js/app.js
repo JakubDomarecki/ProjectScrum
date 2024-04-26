@@ -209,8 +209,10 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
 
 })
 
+
     function saveRecipeValueToLocalStorage(newObject) {
       const dataFromLocalStorage = JSON.parse(localStorage.getItem('recipes')) || [];
+      newObject.id = dataFromLocalStorage.length + 1;
       dataFromLocalStorage.push(newObject);
       localStorage.setItem('recipes', JSON.stringify(dataFromLocalStorage));
 
@@ -228,7 +230,7 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
 
 
         const idCell = document.createElement('td');
-        idCell.textContent = (index).toString();
+        idCell.textContent = (recipes.id);
         newRow.appendChild(idCell);
 
         const titleCell = document.createElement('td');
@@ -399,7 +401,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Jeśli tak, ten kod działa.
 
     // Logika przepisu
-    const addSchedulesTitle = document.getElementById('addSchedulesTitle');
+
+
+
+
+ const addSchedulesTitle = document.getElementById('addSchedulesTitle');
     const addSchedulesDescription = document.getElementById('addSchedulesDescription');
     const addSchedulesNumber = document.getElementById('addSchedulesNumber');
     const addSchedulesSave = document.getElementById('addSchedulesSave');
@@ -448,9 +454,9 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         // Jeśli wszystkie pola są poprawnie wypełnione, wykonaj odpowiednie akcje
         const dataFromLocalStorage = JSON.parse(localStorage.getItem('schedules')) || [];
+        newObject.id = dataFromLocalStorage.length + 1;
         dataFromLocalStorage.push(newObject);
         localStorage.setItem('schedules', JSON.stringify(dataFromLocalStorage));
-        alert('Plan zapisany do localStorage.');
       }
     }
 
@@ -465,7 +471,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const newRow = document.createElement('tr');
 
         const idCell = document.createElement('td');
-        idCell.textContent = (index + 1).toString();
+        idCell.textContent = schedule.id; // Ustawienie ID z obiektu
         newRow.appendChild(idCell);
 
         const titleCell = document.createElement('td');
@@ -528,7 +534,7 @@ document.addEventListener('DOMContentLoaded', function() {
       };
       saveScheduleValueToLocalStorage(newScheduleValue);
       console.log('Zapisano: ', newScheduleValue);
-      // window.location.href = 'schedules.html'; // Przekierowanie do strony schedules.html
+      window.location.href = 'schedules.html'; // Przekierowanie do strony schedules.html
     });
 
 
