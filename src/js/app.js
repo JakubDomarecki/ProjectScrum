@@ -1,5 +1,6 @@
 const dodajPrzepis = document.querySelector('#left');
-const dodajPlan = document.querySelector('#right');
+// skomentowałem ten plan bo go nie używa, a wywołuje error na konsoli
+// const dodajPlan = document.querySelector('#right');
 const pokazPrzepis = document.querySelector('#przepis');
 const pokazPlan = document.querySelector('#plan');
 const pokazDashboard = document.querySelector('#recipes_button');
@@ -28,7 +29,7 @@ const selects = document.querySelectorAll('.food');
 const SavePlan = document.querySelector('.schedules_form_header_buttton');
 const addRecipe = document.querySelector('.plus_icon');
 const addIngridientsToList = document.querySelector('.plus_icon2');
-const newRecipePlace =document.querySelector('.instruction_list_ul');
+const newRecipePlace = document.querySelector('.instruction_list_ul');
 const newIngridientsPlace = document.querySelector('.ingridients__list_ul');
 const instructionsInput = document.querySelector('.instructions__input');
 const ingridientsInput = document.querySelector('.ingridients__input');
@@ -38,24 +39,22 @@ const recipeList = document.querySelector('#recipeList');
 const recipeName = document.querySelector('.recipes_input');
 const recipeDescription = document.querySelector('.recipes_input2');
 const recipeInTable = document.querySelector('.newRecipe');
-const headerName = document.querySelector(".header_name");
-const Input1Warning = document.querySelector(".schedules_input1_warning");
-const Input2Warning = document.querySelector(".schedules_input2_warning");
-const Input3Warning = document.querySelector(".schedules_input3_warning");
+const headerName = document.querySelector('.header_name');
+const Input1Warning = document.querySelector('.schedules_input1_warning');
+const Input2Warning = document.querySelector('.schedules_input2_warning');
+const Input3Warning = document.querySelector('.schedules_input3_warning');
 
-const editRecipes = document.querySelector('.app_container2')
+const editRecipes = document.querySelector('.app_container2');
 
-const Input4Warning = document.querySelector(".schedules_input4_warning");
+const Input4Warning = document.querySelector('.schedules_input4_warning');
 
-const recipeEditPlace = document.querySelector('.instruction_list_ul2')
-const ingredtientsEditPlace = document.querySelector('.ingridients__list_ul2')
+const recipeEditPlace = document.querySelector('.instruction_list_ul2');
+const ingredtientsEditPlace = document.querySelector('.ingridients__list_ul2');
 
 const recipesNameWarning = document.querySelector('.recipes_name_warning');
 const recipesDescriptionWarning = document.querySelector('.recipes_description_warning');
 const instructionsWarning = document.querySelector('.instructions_warning');
 const ingridientsWarning = document.querySelector('.ingridients_warning');
-
-
 
 
 // logowanie //
@@ -71,9 +70,9 @@ window.addEventListener('load', function() {
 
 
 // Zapisz wartość loginInput do localStorage przy kliknięciu na pokazDashboard
-pokazDashboard?.addEventListener("click", function(e){
-  if(loginInput.value === "") {
-    const errorMsg = document.getElementById('errorMsg').style.display = "block";
+pokazDashboard?.addEventListener('click', function(e) {
+  if (loginInput.value === '') {
+    const errorMsg = document.getElementById('errorMsg').style.display = 'block';
   } else {
     localStorage.setItem('login', loginInput.value);
     headerName.innerText = loginInput.value;
@@ -107,12 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
       let li = document.createElement('li');
       const editButton = document.createElement('buttonEditInRecipesTable');
       editButton.classList.add('button_edit');
-      editButton.style.marginLeft = '5px'
+      editButton.style.marginLeft = '5px';
       editButton.innerHTML = '<img class="icon__add--table" src=../icons/pen-to-square-solid.svg alt="Edit">';
       editButton.addEventListener('click', function() {
 
-        instructionsInput.value = li.innerText
-        li.remove()
+        instructionsInput.value = li.innerText;
+        li.remove();
 
 
       });
@@ -122,21 +121,14 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
       deleteButton.innerHTML = '<img class="icon__add--table" src="../icons/trash-can-solid.svg" alt="Delete">';
       deleteButton.addEventListener('click', function() {
         // Usuwanie planu z localStorage
-        li.remove()
+        li.remove();
       });
       // Retrieve ingredient text from the input field
       let text2 = instructionsInput.value;
 
 
-
-
-
-
-
-
-
       // Add CSS class to the list item
-      li.classList.add("list-ingridients-item");
+      li.classList.add('list-ingridients-item');
 
       // Set the text for the list item
       li.innerText = text2;
@@ -157,30 +149,26 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
       let li = document.createElement('li');
       const editButton = document.createElement('buttonEditInRecipesTable');
       editButton.classList.add('button_edit');
-      editButton.style.marginLeft = '5px'
+      editButton.style.marginLeft = '5px';
       editButton.innerHTML = '<img class="icon__add--table" src=../icons/pen-to-square-solid.svg alt="Edit">';
-      editButton.addEventListener('click', function (event) {
-        ingridientsInput.value = li.innerText
-        li.remove()
-      })
+      editButton.addEventListener('click', function(event) {
+        ingridientsInput.value = li.innerText;
+        li.remove();
+      });
       const deleteButton = document.createElement('buttonDeleteInRecipesTable');
       deleteButton.classList.add('button__delete');
 
       deleteButton.innerHTML = '<img class="icon__add--table" src="../icons/trash-can-solid.svg" alt="Delete">';
       deleteButton.addEventListener('click', function() {
         // Usuwanie planu z localStorage
-        li.remove()
+        li.remove();
       });
       // Retrieve ingredient text from the input field
       const text2 = ingridientsInput.value;
 
 
-
-
-
-
       // Add CSS class to the list item
-      li.classList.add("list-ingridients-item");
+      li.classList.add('list-ingridients-item');
 
       // Set the text for the list item
       li.innerText = text2;
@@ -196,25 +184,26 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
     }
 
 
-addIngridientsToList.addEventListener('click', function (event){
-  addIngridients(newIngridientsPlace)
-  ingridientsInput.value = ''
-});
+    addIngridientsToList.addEventListener('click', function(event) {
+      addIngridients(newIngridientsPlace);
+      ingridientsInput.value = '';
+    });
 
-addRecipe.addEventListener('click', function (event) {
-  addInstructions(newRecipePlace)
-  addInstructions()
-  instructionsInput.value = ''
+    addRecipe.addEventListener('click', function(event) {
+      addInstructions(newRecipePlace);
+      addInstructions();
+      instructionsInput.value = '';
 
 
-});
+    });
 
 
 // ukrywanie okna przepisu //
-recipesHide?.addEventListener('click', function(event) {
-  recipesOverlay.classList.toggle('ukryteMiddle');
-  addRecipesOverlay.classList.toggle('ukryteMiddle');
-});
+    recipesHide?.addEventListener('click', function(event) {
+      recipesOverlay.classList.toggle('ukryteMiddle');
+      addRecipesOverlay.classList.toggle('ukryteMiddle');
+    });
+
 // // dodawanie przepisu + ukrywanie //
 // saveRecipe?.addEventListener('click', function (event){
 // recipesOverlay?.classList.toggle('ukryteMiddle')
@@ -225,33 +214,44 @@ recipesHide?.addEventListener('click', function(event) {
     function saveRecipeValueToLocalStorage(newObject) {
 
 
-      if (recipeName.value === "" || recipeName.value.length > 50 || recipeDescription.value === "" || recipeDescription.value.length > 360 || instructionsInput.value === "" || instructionsInput.value.length > 150 || ingridientsInput.value === "" || ingridientsInput.value.length > 50) {
+      if (recipeName.value === '' || recipeName.value.length > 50 || recipeDescription.value === '' || recipeDescription.value.length > 360 || instructionsInput.value === '' || instructionsInput.value.length > 150 || ingridientsInput.value === '' || ingridientsInput.value.length > 50) {
         // Jeśli któreś z pól jest niepoprawnie wypełnione, wykonaj odpowiednie akcje
-        if (recipeName.value === "" || recipeName.value.length > 50) {
-          recipesNameWarning.style.display = "block";
+        if (recipeName.value === '' || recipeName.value.length > 50) {
+          recipesNameWarning.style.display = 'block';
         } else {
-          recipesNameWarning.style.display = "none";
+          recipesNameWarning.style.display = 'none';
         }
-        if (recipeDescription.value === "" || recipeDescription.value.length > 360) {
-          recipesDescriptionWarning.style.display = "block";
+        if (recipeDescription.value === '' || recipeDescription.value.length > 360) {
+          recipesDescriptionWarning.style.display = 'block';
         } else {
-          recipesDescriptionWarning.style.display = "none";
+          recipesDescriptionWarning.style.display = 'none';
         }
-        if (instructionsInput.value === "" || instructionsInput.value > 150) {
-          instructionsWarning.style.display = "block";
+        if (instructionsInput.value === '' || instructionsInput.value > 150) {
+          instructionsWarning.style.display = 'block';
         } else {
-          instructionsWarning.style.display = "none";
+          instructionsWarning.style.display = 'none';
         }
-        if (ingridientsInput.value === "" || ingridientsInput.value > 50) {
-          ingridientsWarning.style.display = "block";
+        if (ingridientsInput.value === '' || ingridientsInput.value > 50) {
+          ingridientsWarning.style.display = 'block';
         } else {
-          ingridientsWarning.style.display = "none";
+          ingridientsWarning.style.display = 'none';
         }
-      }
-      else {
+      } else {
         // Jeśli wszystkie pola są poprawnie wypełnione, wykonaj odpowiednie akcje
         const dataFromLocalStorage = JSON.parse(localStorage.getItem('recipes')) || [];
-        newObject.id = dataFromLocalStorage.length + 1;
+
+        function findUniqueID() {
+          const existingIDs = dataFromLocalStorage.map(recipes => recipes.id);
+          let newID = 1;
+          while (existingIDs.includes(newID)) {
+            newID++;
+          }
+          return newID;
+        }
+
+        // Ustawienie id na najmniejsze niepowtarzalne ID
+        newObject.id = findUniqueID();
+
         dataFromLocalStorage.push(newObject);
         localStorage.setItem('recipes', JSON.stringify(dataFromLocalStorage));
         alert('dodano przepis');
@@ -267,7 +267,6 @@ recipesHide?.addEventListener('click', function(event) {
 
       dataFromLocalStorage.forEach((recipes, index) => {
         const newRow = document.createElement('tr');
-
 
         const idCell = document.createElement('td');
         idCell.textContent = (recipes.id);
@@ -293,10 +292,10 @@ recipesHide?.addEventListener('click', function(event) {
         editButton.innerHTML = '<img class="icon__add--table" src=../icons/pen-to-square-solid.svg alt="Edit">';
         editButton.addEventListener('click', function() {
 
-          editRecipes.classList.toggle('ukryteMiddle')
-          recipesOverlay.classList.toggle('ukryteMiddle')
-          console.log(newIngridientsPlace)
-          newRecipePlace.appendChild(recipeEditPlace)
+          editRecipes.classList.toggle('ukryteMiddle');
+          recipesOverlay.classList.toggle('ukryteMiddle');
+          console.log(newIngridientsPlace);
+          newRecipePlace.appendChild(recipeEditPlace);
 
 
         });
@@ -322,16 +321,17 @@ recipesHide?.addEventListener('click', function(event) {
 
       });
     }
+
     window.addEventListener('load', loadRecipeValuesFromLocalStorage);
 
 
 // Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
     saveRecipe?.addEventListener('click', function(e) {
       e.preventDefault();
-      recipesNameWarning.style.display = "none";
-      recipesDescriptionWarning.style.display = "none";
-      instructionsWarning.style.display = "none";
-      ingridientsWarning.style.display = "none";
+      recipesNameWarning.style.display = 'none';
+      recipesDescriptionWarning.style.display = 'none';
+      instructionsWarning.style.display = 'none';
+      ingridientsWarning.style.display = 'none';
       const newScheduleValue = {
         title: recipesInput.value,
         description: recipeDescription.value,
@@ -352,8 +352,6 @@ schedulesAdd?.addEventListener('click', function(event) {
   newSchedule?.classList.toggle('new-plan-display-none');
 
 });
-
-
 
 
 // dodawanie ilości przepisów -test counter coś tam
@@ -415,7 +413,7 @@ closeBtn3?.addEventListener('click', function(event) {
 
 document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL strony to "app.html"?
   if (window.location.pathname.includes('app.html')) {
-nrTyg.innerText = `Twój plan na  ten tydzień: `;
+    nrTyg.innerText = `Twój plan na  ten tydzień: `;
   }
 });
 
@@ -453,61 +451,71 @@ document.addEventListener('DOMContentLoaded', function() {
     // Logika przepisu
 
 
-
-
- const addSchedulesTitle = document.getElementById('addSchedulesTitle');
+    const addSchedulesTitle = document.getElementById('addSchedulesTitle');
     const addSchedulesDescription = document.getElementById('addSchedulesDescription');
     const addSchedulesNumber = document.getElementById('addSchedulesNumber');
     const addSchedulesSave = document.getElementById('addSchedulesSave');
 
     // Zapisywanie planu do localStorage
     function saveScheduleValueToLocalStorage(newObject) {
-      const schedulesInput1 = document.querySelector(".schedules_input1");
-      const schedulesInput2 = document.querySelector(".schedules_input2");
-      const schedulesInput3 = document.querySelector(".schedules_input3");
-      const foodSelects = document.querySelectorAll(".food");
+      const schedulesInput1 = document.querySelector('.schedules_input1');
+      const schedulesInput2 = document.querySelector('.schedules_input2');
+      const schedulesInput3 = document.querySelector('.schedules_input3');
+      const foodSelects = document.querySelectorAll('.food');
 
       let allFoodSelected = true;
       foodSelects.forEach(select => {
-        if (select.value === "") {
+        if (select.value === '') {
           allFoodSelected = false;
           return;
         }
       });
 
-      if (schedulesInput1.value === "" || schedulesInput1.value.length > 50 || schedulesInput2.value === "" || schedulesInput2.value.length > 360 || addSchedulesNumber.value === "" || addSchedulesNumber.value < 1 || addSchedulesNumber.value > 52 || !allFoodSelected) {
+      if (schedulesInput1.value === '' || schedulesInput1.value.length > 50 || schedulesInput2.value === '' || schedulesInput2.value.length > 360 || addSchedulesNumber.value === '' || addSchedulesNumber.value < 1 || addSchedulesNumber.value > 52 || !allFoodSelected) {
         // Jeśli któreś z pól jest niepoprawnie wypełnione, wykonaj odpowiednie akcje
-        if (schedulesInput1.value === "" || schedulesInput1.value.length > 50) {
-          Input1Warning.style.display = "block";
+        if (schedulesInput1.value === '' || schedulesInput1.value.length > 50) {
+          Input1Warning.style.display = 'block';
         } else {
-          Input1Warning.style.display = "none";
+          Input1Warning.style.display = 'none';
         }
 
-        if (schedulesInput2.value === "" || schedulesInput2.value.length > 360) {
-          Input2Warning.style.display = "block";
+        if (schedulesInput2.value === '' || schedulesInput2.value.length > 360) {
+          Input2Warning.style.display = 'block';
         } else {
-          Input2Warning.style.display = "none";
+          Input2Warning.style.display = 'none';
         }
 
-        if (schedulesInput3.value === "" || schedulesInput3.value < 1 || schedulesInput3.value > 52) {
-          Input3Warning.style.display = "block";
+        if (schedulesInput3.value === '' || schedulesInput3.value < 1 || schedulesInput3.value > 52) {
+          Input3Warning.style.display = 'block';
         } else {
-          Input3Warning.style.display = "none";
+          Input3Warning.style.display = 'none';
         }
         foodSelects.forEach(select => {
-          if (select.value === "") {
-            select.classList.add("warning");
+          if (select.value === '') {
+            select.classList.add('warning');
           } else {
-            select.classList.remove("warning");
+            select.classList.remove('warning');
           }
         });
       } else {
-      //   // Jeśli wszystkie pola są poprawnie wypełnione, wykonaj odpowiednie akcje
+        // Jeśli wszystkie pola są poprawnie wypełnione, wykonaj odpowiednie akcje
         const dataFromLocalStorage = JSON.parse(localStorage.getItem('schedules')) || [];
-        newObject.id = dataFromLocalStorage.length + 1;
+
+        // Funkcja do znajdowania najmniejszego niepowtarzalnego ID
+        function findUniqueID() {
+          const existingIDs = dataFromLocalStorage.map(schedule => schedule.id);
+          let newID = 1;
+          while (existingIDs.includes(newID)) {
+            newID++;
+          }
+          return newID;
+        }
+
+// Ustawienie id na najmniejsze niepowtarzalne ID
+        newObject.id = findUniqueID();
+
         dataFromLocalStorage.push(newObject);
         localStorage.setItem('schedules', JSON.stringify(dataFromLocalStorage));
-        alert('dodano plan');
       }
     }
 
@@ -537,13 +545,13 @@ document.addEventListener('DOMContentLoaded', function() {
         numberCell.textContent = schedule.number;
         newRow.appendChild(numberCell);
 
-          const actionsCell = document.createElement('td');
+        const actionsCell = document.createElement('td');
         //przycisk edit
 
         const editButton = document.createElement('buttonEdit');
         editButton.classList.add('button_edit');
         editButton.innerHTML = '<img class="icon__add--table" src=../icons/pen-to-square-solid.svg alt="Edit">';
-        editButton.addEventListener('click', function(event)  {
+        editButton.addEventListener('click', function(event) {
 
         });
         // Przycisk usuwania
@@ -575,10 +583,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
     addSchedulesSave?.addEventListener('click', function(e) {
       e.preventDefault();
-      Input1Warning.style.display = "none";
-      Input2Warning.style.display = "none";
-      Input3Warning.style.display = "none";
-      Input4Warning.style.display = "none";
+      Input1Warning.style.display = 'none';
+      Input2Warning.style.display = 'none';
+      Input3Warning.style.display = 'none';
+      Input4Warning.style.display = 'none';
       const newScheduleValue = {
         title: addSchedulesTitle.value,
         description: addSchedulesDescription.value,
@@ -588,8 +596,6 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Zapisano: ', newScheduleValue);
       // window.location.href = 'schedules.html'; // Przekierowanie do strony schedules.html
     });
-
-
   }
 });
 
