@@ -42,6 +42,7 @@ const headerName = document.querySelector(".header_name");
 const Input1Warning = document.querySelector(".schedules_input1_warning");
 const Input2Warning = document.querySelector(".schedules_input2_warning");
 const Input3Warning = document.querySelector(".schedules_input3_warning");
+const Input4Warning = document.querySelector(".schedules_input4_warning");
 
 
 // logowanie //
@@ -400,8 +401,17 @@ document.addEventListener('DOMContentLoaded', function() {
       const schedulesInput1 = document.querySelector(".schedules_input1");
       const schedulesInput2 = document.querySelector(".schedules_input2");
       const schedulesInput3 = document.querySelector(".schedules_input3");
+      const foodSelects = document.querySelectorAll(".food");
 
-      if (schedulesInput1.value === "" || schedulesInput1.value.length > 50 || schedulesInput2.value === "" || schedulesInput2.value.length > 360 || addSchedulesNumber.value === "" || addSchedulesNumber.value < 1 || addSchedulesNumber.value > 52) {
+      let allFoodSelected = true;
+      foodSelects.forEach(select => {
+        if (select.value === "") {
+          allFoodSelected = false;
+          return;
+        }
+      });
+
+      if (schedulesInput1.value === "" || schedulesInput1.value.length > 50 || schedulesInput2.value === "" || schedulesInput2.value.length > 360 || addSchedulesNumber.value === "" || addSchedulesNumber.value < 1 || addSchedulesNumber.value > 52 || !allFoodSelected) {
         // Jeśli któreś z pól jest niepoprawnie wypełnione, wykonaj odpowiednie akcje
         if (schedulesInput1.value === "" || schedulesInput1.value.length > 50) {
           Input1Warning.style.display = "block";
@@ -420,6 +430,13 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           Input3Warning.style.display = "none";
         }
+        foodSelects.forEach(select => {
+          if (select.value === "") {
+            select.classList.add("warning");
+          } else {
+            select.classList.remove("warning");
+          }
+        });
       } else {
         // Jeśli wszystkie pola są poprawnie wypełnione, wykonaj odpowiednie akcje
         const dataFromLocalStorage = JSON.parse(localStorage.getItem('schedules')) || [];
@@ -495,6 +512,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Input1Warning.style.display = "none";
       Input2Warning.style.display = "none";
       Input3Warning.style.display = "none";
+      Input4Warning.style.display = "none";
       const newScheduleValue = {
         title: addSchedulesTitle.value,
         description: addSchedulesDescription.value,
