@@ -42,7 +42,11 @@ const headerName = document.querySelector(".header_name");
 const Input1Warning = document.querySelector(".schedules_input1_warning");
 const Input2Warning = document.querySelector(".schedules_input2_warning");
 const Input3Warning = document.querySelector(".schedules_input3_warning");
+
+const editRecipes = document.querySelector('.app_container2')
+
 const Input4Warning = document.querySelector(".schedules_input4_warning");
+
 
 
 // logowanie //
@@ -252,7 +256,9 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
         editButton.classList.add('button_edit');
         editButton.innerHTML = '<img class="icon__add--table" src=../icons/pen-to-square-solid.svg alt="Edit">';
         editButton.addEventListener('click', function() {
-
+          console.log(20)
+          editRecipes.classList.toggle('ukryteMiddle')
+          recipesOverlay.classList.toggle('ukryteMiddle')
 
         });
         // // Przycisk usuwania
@@ -262,7 +268,7 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
         deleteButton.addEventListener('click', function() {
           // Usuwanie planu z localStorage
           dataFromLocalStorage.splice(index, 1);
-          localStorage.setItem('schedules', JSON.stringify(dataFromLocalStorage));
+          localStorage.setItem('recipes', JSON.stringify(dataFromLocalStorage));
           // Usuwanie wiersza z tabeli
           recipeList.removeChild(newRow);
         });
@@ -492,7 +498,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const editButton = document.createElement('buttonEdit');
         editButton.classList.add('button_edit');
         editButton.innerHTML = '<img class="icon__add--table" src=../icons/pen-to-square-solid.svg alt="Edit">';
-        editButton.addEventListener('click', function() {
+        editButton.addEventListener('click', function(event)  {
+
         });
         // Przycisk usuwania
         const deleteButton = document.createElement('buttonDelete');
