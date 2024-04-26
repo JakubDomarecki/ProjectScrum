@@ -246,14 +246,15 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
       window.location.href = 'recipes.html'; // Przekierowanie do strony recipe.html
     });
 
-
-// ukrywanie + pokazanie dodawania planu //
-schedulesAdd?.addEventListener('click', function(event) {
-  scheduleList?.classList.add('new-plan-display-none');
-  newSchedule?.classList.remove('new-plan-display-none');
-});
   }
 });
+// ukrywanie + pokazanie dodawania planu //
+schedulesAdd?.addEventListener('click', function(event) {
+  scheduleList?.classList.toggle('new-plan-display-none');
+  newSchedule?.classList.toggle('new-plan-display-none');
+
+});
+
 
 
 
