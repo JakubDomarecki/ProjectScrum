@@ -48,6 +48,8 @@ const editRecipes = document.querySelector('.app_container2')
 const Input4Warning = document.querySelector(".schedules_input4_warning");
 const recipesNameWarning = document.querySelector('.recipes_name_warning');
 const recipesDescriptionWarning = document.querySelector('.recipes_description_warning');
+const instructionsWarning = document.querySelector('.instructions_warning');
+const ingridientsWarning = document.querySelector('.ingridients_warning');
 
 
 
@@ -217,7 +219,7 @@ recipesHide?.addEventListener('click', function(event) {
     function saveRecipeValueToLocalStorage(newObject) {
 
 
-      if (recipeName.value === "" || recipeName.value.length > 50 || recipeDescription.value === "" || recipeDescription.value.length > 360) {
+      if (recipeName.value === "" || recipeName.value.length > 50 || recipeDescription.value === "" || recipeDescription.value.length > 360 || instructionsInput.value === "" || instructionsInput.value.length > 150 || ingridientsInput.value === "" || ingridientsInput.value.length > 50) {
         // Jeśli któreś z pól jest niepoprawnie wypełnione, wykonaj odpowiednie akcje
         if (recipeName.value === "" || recipeName.value.length > 50) {
           recipesNameWarning.style.display = "block";
@@ -228,6 +230,16 @@ recipesHide?.addEventListener('click', function(event) {
           recipesDescriptionWarning.style.display = "block";
         } else {
           recipesDescriptionWarning.style.display = "none";
+        }
+        if (instructionsInput.value === "" || instructionsInput.value > 150) {
+          instructionsWarning.style.display = "block";
+        } else {
+          instructionsWarning.style.display = "none";
+        }
+        if (ingridientsInput.value === "" || ingridientsInput.value > 50) {
+          ingridientsWarning.style.display = "block";
+        } else {
+          ingridientsWarning.style.display = "none";
         }
       }
       else {
@@ -309,6 +321,8 @@ recipesHide?.addEventListener('click', function(event) {
       e.preventDefault();
       recipesNameWarning.style.display = "none";
       recipesDescriptionWarning.style.display = "none";
+      instructionsWarning.style.display = "none";
+      ingridientsWarning.style.display = "none";
       const newScheduleValue = {
         title: recipesInput.value,
         description: recipeDescription.value,
@@ -478,7 +492,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
       } else {
-        // Jeśli wszystkie pola są poprawnie wypełnione, wykonaj odpowiednie akcje
+      //   // Jeśli wszystkie pola są poprawnie wypełnione, wykonaj odpowiednie akcje
         const dataFromLocalStorage = JSON.parse(localStorage.getItem('schedules')) || [];
         newObject.id = dataFromLocalStorage.length + 1;
         dataFromLocalStorage.push(newObject);
@@ -561,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function() {
       };
       saveScheduleValueToLocalStorage(newScheduleValue);
       console.log('Zapisano: ', newScheduleValue);
-      window.location.href = 'schedules.html'; // Przekierowanie do strony schedules.html
+      // window.location.href = 'schedules.html'; // Przekierowanie do strony schedules.html
     });
 
 
