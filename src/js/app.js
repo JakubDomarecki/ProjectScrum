@@ -91,27 +91,34 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
     function addInstructions(node) {
       // Create list item and buttons
       let li = document.createElement('li');
-      let btn1 = document.createElement('button');
-      let btn2 = document.createElement('button');
+      const editButton = document.createElement('buttonEditInRecipesTable');
+      editButton.classList.add('button_edit');
+      editButton.style.marginLeft = '5px'
+      editButton.innerHTML = '<img class="icon__add--table" src=../icons/pen-to-square-solid.svg alt="Edit">';
+      editButton.addEventListener('click', function() {
 
+        instructionsInput.value = li.innerText
+        li.remove()
+
+
+      });
+      const deleteButton = document.createElement('buttonDeleteInRecipesTable');
+      deleteButton.classList.add('button__delete');
+
+      deleteButton.innerHTML = '<img class="icon__add--table" src="../icons/trash-can-solid.svg" alt="Delete">';
+      deleteButton.addEventListener('click', function() {
+        // Usuwanie planu z localStorage
+        li.remove()
+      });
       // Retrieve ingredient text from the input field
-      const text2 = instructionsInput.value;
-
-      // Set styles for buttons
-      btn1.style.width = '15px';
-      btn1.style.height = '15px';
-      btn2.style.width = '15px';
-      btn2.style.height = '15px';
-      btn1.style.marginLeft = '5px'
-      btn2.style.marginLeft = '5px'
+      let text2 = instructionsInput.value;
 
 
-      btn1.addEventListener('click', function (event) {
-        console.log("edytuj")
-      })
-      btn2.addEventListener('click', function (event) {
-        console.log("usun")
-      })
+
+
+
+
+
 
 
       // Add CSS class to the list item
@@ -121,8 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
       li.innerText = text2;
 
       // Append buttons to the list item
-      li.appendChild(btn1);
-      li.appendChild(btn2);
+      li.appendChild(editButton);
+      li.appendChild(deleteButton);
+
 
       // Append the list item to the specified node
       node.appendChild(li);
@@ -133,28 +141,28 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
     function addIngridients(node) {
       // Create list item and buttons
       let li = document.createElement('li');
-      let btn1 = document.createElement('button');
-      let btn2 = document.createElement('button');
+      const editButton = document.createElement('buttonEditInRecipesTable');
+      editButton.classList.add('button_edit');
+      editButton.style.marginLeft = '5px'
+      editButton.innerHTML = '<img class="icon__add--table" src=../icons/pen-to-square-solid.svg alt="Edit">';
+      editButton.addEventListener('click', function (event) {
+        ingridientsInput.value = li.innerText
+        li.remove()
+      })
+      const deleteButton = document.createElement('buttonDeleteInRecipesTable');
+      deleteButton.classList.add('button__delete');
 
+      deleteButton.innerHTML = '<img class="icon__add--table" src="../icons/trash-can-solid.svg" alt="Delete">';
+      deleteButton.addEventListener('click', function() {
+        // Usuwanie planu z localStorage
+        li.remove()
+      });
       // Retrieve ingredient text from the input field
       const text2 = ingridientsInput.value;
 
-      // Set styles for buttons
-      btn1.style.width = '15px';
-      btn1.style.height = '15px';
-      btn2.style.width = '15px';
-      btn2.style.height = '15px';
-      btn1.style.marginLeft = '5px'
-      btn2.style.marginLeft = '5px'
 
 
 
-    btn1.addEventListener('click', function (event) {
-      console.log(20)
-    })
-   btn2.addEventListener('click', function (event) {
-      console.log(10)
-    })
 
 
       // Add CSS class to the list item
@@ -164,8 +172,8 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
       li.innerText = text2;
 
       // Append buttons to the list item
-      li.appendChild(btn1);
-      li.appendChild(btn2);
+      li.appendChild(editButton);
+      li.appendChild(deleteButton);
 
       // Append the list item to the specified node
       node.appendChild(li);
