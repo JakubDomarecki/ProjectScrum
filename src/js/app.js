@@ -46,8 +46,14 @@ const Input3Warning = document.querySelector(".schedules_input3_warning");
 const editRecipes = document.querySelector('.app_container2')
 
 const Input4Warning = document.querySelector(".schedules_input4_warning");
+
 const recipeEditPlace = document.querySelector('.instruction_list_ul2')
 const ingredtientsEditPlace = document.querySelector('.ingridients__list_ul2')
+
+const recipesNameWarning = document.querySelector('.recipes_name_warning');
+const recipesDescriptionWarning = document.querySelector('.recipes_description_warning');
+
+
 
 
 // logowanie //
@@ -207,21 +213,37 @@ recipesHide?.addEventListener('click', function(event) {
   recipesOverlay.classList.toggle('ukryteMiddle');
   addRecipesOverlay.classList.toggle('ukryteMiddle');
 });
-// dodawanie przepisu + ukrywanie //
-saveRecipe?.addEventListener('click', function (event){
-recipesOverlay?.classList.toggle('ukryteMiddle')
-  addRecipesOverlay?.classList.toggle('ukryteMiddle')
-
-
-})
+// // dodawanie przepisu + ukrywanie //
+// saveRecipe?.addEventListener('click', function (event){
+// recipesOverlay?.classList.toggle('ukryteMiddle')
+//   addRecipesOverlay?.classList.toggle('ukryteMiddle')
+// })
 
 
     function saveRecipeValueToLocalStorage(newObject) {
-      const dataFromLocalStorage = JSON.parse(localStorage.getItem('recipes')) || [];
-      newObject.id = dataFromLocalStorage.length + 1;
-      dataFromLocalStorage.push(newObject);
-      localStorage.setItem('recipes', JSON.stringify(dataFromLocalStorage));
 
+
+      if (recipeName.value === "" || recipeName.value.length > 50 || recipeDescription.value === "" || recipeDescription.value.length > 360) {
+        // Jeśli któreś z pól jest niepoprawnie wypełnione, wykonaj odpowiednie akcje
+        if (recipeName.value === "" || recipeName.value.length > 50) {
+          recipesNameWarning.style.display = "block";
+        } else {
+          recipesNameWarning.style.display = "none";
+        }
+        if (recipeDescription.value === "" || recipeDescription.value.length > 360) {
+          recipesDescriptionWarning.style.display = "block";
+        } else {
+          recipesDescriptionWarning.style.display = "none";
+        }
+      }
+      else {
+        // Jeśli wszystkie pola są poprawnie wypełnione, wykonaj odpowiednie akcje
+        const dataFromLocalStorage = JSON.parse(localStorage.getItem('recipes')) || [];
+        newObject.id = dataFromLocalStorage.length + 1;
+        dataFromLocalStorage.push(newObject);
+        localStorage.setItem('recipes', JSON.stringify(dataFromLocalStorage));
+        alert('dodano');
+      }
     }
 
     function loadRecipeValuesFromLocalStorage() {
@@ -294,6 +316,8 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
 // Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
     saveRecipe?.addEventListener('click', function(e) {
       e.preventDefault();
+      recipesNameWarning.style.display = "none";
+      recipesDescriptionWarning.style.display = "none";
       const newScheduleValue = {
         title: recipesInput.value,
         description: recipeDescription.value,
@@ -301,7 +325,7 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
         ingredients: newIngridientsPlace,
       };
       saveRecipeValueToLocalStorage(newScheduleValue);
-      window.location.href = 'recipes.html'; // Przekierowanie do strony recipe.html
+      // window.location.href = 'recipes.html'; // Przekierowanie do strony recipe.html
 
 
     });
