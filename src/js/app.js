@@ -192,7 +192,7 @@ saveRecipe?.addEventListener('click', function (event){
 recipesOverlay?.classList.toggle('ukryteMiddle')
   addRecipesOverlay?.classList.toggle('ukryteMiddle')
 
-  saveRecipeValueToLocalStorage(tabela)
+
 
 
 
@@ -214,18 +214,17 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
       dataFromLocalStorage.forEach((recipes, index) => {
         const newRow = document.createElement('tr');
 
-        const idCell = document.createElement('td');
-        idCell.textContent = (index + 1).toString();
-        newRow.appendChild(idCell);
+        const idCell2 = document.createElement('td');
+        idCell2.textContent = (index + 1).toString();
+        newRow.appendChild(idCell2);
 
-        const titleCell = document.createElement('td');
-        titleCell.textContent = recipeName.title;
-        newRow.appendChild(titleCell);
+        const titleCell2 = document.createElement('td');
+        titleCell2.textContent = recipeName.title; // Use value property to get the input value
+        newRow.appendChild(titleCell2);
 
         const descriptionCell = document.createElement('td');
-        descriptionCell.textContent = recipeDescription.description;
+        descriptionCell.textContent = recipeDescription.description; // Use value property to get the input value
         newRow.appendChild(descriptionCell);
-
 
 
         const actionsCell = document.createElement('td');
@@ -241,13 +240,13 @@ recipesOverlay?.classList.toggle('ukryteMiddle')
     saveRecipe?.addEventListener('click', function(e) {
       e.preventDefault();
       const newScheduleValue = {
-        title: saveRecipe.value,
-        description: saveRecipe.value,
-        number: saveRecipe.value,
+        title: recipeName.value,
+        description: recipeDescription.value,
+
       };
       saveRecipeValueToLocalStorage(newScheduleValue);
       console.log('Zapisano: ', newScheduleValue);
-      window.location.href = 'recipes.html'; // Przekierowanie do strony schedules.html
+      window.location.href = 'recipes.html'; // Przekierowanie do strony recipe.html
     });
 
 
