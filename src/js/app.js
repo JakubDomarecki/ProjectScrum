@@ -26,7 +26,18 @@ const warr = document.querySelector('#right__32');
 const check = document.querySelector('#right__33');
 const selects = document.querySelectorAll('.food');
 const SavePlan = document.querySelector('.schedules_form_header_buttton');
-
+const addRecipe = document.querySelector('.plus_icon');
+const addIngridientsToList = document.querySelector('.plus_icon2');
+const newRecipePlace =document.querySelector('.instruction_list_ul');
+const newIngridientsPlace = document.querySelector('.ingridients__list_ul');
+const instructionsInput = document.querySelector('.instructions__input');
+const ingridientsInput = document.querySelector('.ingridients__input');
+const saveRecipe = document.querySelector('.togglerRecipes')
+const hideRecipeCreator = document.querySelector('.container__recipes')
+const tabela = document.querySelector('#recipeList')
+const recipeName = document.querySelector('.recipes_input')
+const recipeDescription = document.querySelector('.recipes_input2')
+const recipeInTable = document.querySelector('.newRecipe')
 
 // logowanie //
 let savedName = localStorage.getItem('savedName');
@@ -68,17 +79,187 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// dodawanie przepisu logika (w srodku przepisów)
+
+document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL strony to "app.html"?
+  if (window.location.pathname.includes('recipes.html')) {
+
+    function addInstructions(node) {
+      // Create list item and buttons
+      let li = document.createElement('li');
+      let btn1 = document.createElement('button');
+      let btn2 = document.createElement('button');
+
+      // Retrieve ingredient text from the input field
+      const text2 = instructionsInput.value;
+
+      // Set styles for buttons
+      btn1.style.width = '15px';
+      btn1.style.height = '15px';
+      btn2.style.width = '15px';
+      btn2.style.height = '15px';
+      btn1.style.marginLeft = '5px'
+      btn2.style.marginLeft = '5px'
+
+
+      btn1.addEventListener('click', function (event) {
+        console.log(20)
+      })
+      btn2.addEventListener('click', function (event) {
+        console.log(10)
+      })
+
+
+      // Add CSS class to the list item
+      li.classList.add("list-ingridients-item");
+
+      // Set the text for the list item
+      li.innerText = text2;
+
+      // Append buttons to the list item
+      li.appendChild(btn1);
+      li.appendChild(btn2);
+
+      // Append the list item to the specified node
+      node.appendChild(li);
+
+
+    }
+
+    function addIngridients(node) {
+      // Create list item and buttons
+      let li = document.createElement('li');
+      let btn1 = document.createElement('button');
+      let btn2 = document.createElement('button');
+
+      // Retrieve ingredient text from the input field
+      const text2 = ingridientsInput.value;
+
+      // Set styles for buttons
+      btn1.style.width = '15px';
+      btn1.style.height = '15px';
+      btn2.style.width = '15px';
+      btn2.style.height = '15px';
+      btn1.style.marginLeft = '5px'
+      btn2.style.marginLeft = '5px'
+
+
+    btn1.addEventListener('click', function (event) {
+      console.log(20)
+    })
+   btn2.addEventListener('click', function (event) {
+      console.log(10)
+    })
+
+
+      // Add CSS class to the list item
+      li.classList.add("list-ingridients-item");
+
+      // Set the text for the list item
+      li.innerText = text2;
+
+      // Append buttons to the list item
+      li.appendChild(btn1);
+      li.appendChild(btn2);
+
+      // Append the list item to the specified node
+      node.appendChild(li);
+
+
+    }
+
+
+addIngridientsToList.addEventListener('click', function (event){
+  addIngridients(newIngridientsPlace)
+  ingridientsInput.value = ''
+});
+
+addRecipe.addEventListener('click', function (event) {
+  addInstructions(newRecipePlace)
+  instructionsInput.value = ''
+
+
+});
+
+
 // ukrywanie okna przepisu //
 recipesHide?.addEventListener('click', function(event) {
-  recipesOverlay.classList.add('ukryteMiddle');
+  recipesOverlay.classList.toggle('ukryteMiddle');
   addRecipesOverlay.classList.toggle('ukryteMiddle');
 });
+// dodawanie przepisu + ukrywanie //
+saveRecipe?.addEventListener('click', function (event){
+recipesOverlay?.classList.toggle('ukryteMiddle')
+  addRecipesOverlay?.classList.toggle('ukryteMiddle')
+
+  saveRecipeValueToLocalStorage(tabela)
+
+
+
+})
+
+    function saveRecipeValueToLocalStorage(newObject) {
+      const dataFromLocalStorage = JSON.parse(localStorage.getItem('recipes')) || [];
+      dataFromLocalStorage.push(newObject);
+      localStorage.setItem('recipes', JSON.stringify(dataFromLocalStorage));
+
+    }
+
+    function loadRecipeValuesFromLocalStorage() {
+      const dataFromLocalStorage = JSON.parse(localStorage.getItem('recipes')) || [];
+      const recipeList = document.getElementById('recipeList');
+
+      recipeList.innerHTML = '';  // Czyszczenie tabeli przed dodaniem nowych danych
+
+      dataFromLocalStorage.forEach((recipes, index) => {
+        const newRow = document.createElement('tr');
+
+        const idCell = document.createElement('td');
+        idCell.textContent = (index + 1).toString();
+        newRow.appendChild(idCell);
+
+        const titleCell = document.createElement('td');
+        titleCell.textContent = recipeName.title;
+        newRow.appendChild(titleCell);
+
+        const descriptionCell = document.createElement('td');
+        descriptionCell.textContent = recipeDescription.description;
+        newRow.appendChild(descriptionCell);
+
+
+
+        const actionsCell = document.createElement('td');
+        actionsCell.innerHTML = '<button>Edit</button><button>Delete</button>';
+        newRow.appendChild(actionsCell);
+        recipeList.appendChild(newRow);
+      });
+    }
+    window.addEventListener('load', loadRecipeValuesFromLocalStorage);
+
+
+// Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
+    saveRecipe?.addEventListener('click', function(e) {
+      e.preventDefault();
+      const newScheduleValue = {
+        title: saveRecipe.value,
+        description: saveRecipe.value,
+        number: saveRecipe.value,
+      };
+      saveRecipeValueToLocalStorage(newScheduleValue);
+      console.log('Zapisano: ', newScheduleValue);
+      window.location.href = 'recipes.html'; // Przekierowanie do strony schedules.html
+    });
+
 
 // ukrywanie + pokazanie dodawania planu //
 schedulesAdd?.addEventListener('click', function(event) {
   scheduleList?.classList.add('new-plan-display-none');
   newSchedule?.classList.remove('new-plan-display-none');
 });
+  }
+});
+
+
 
 // dodawanie ilości przepisów -test counter coś tam
 //
@@ -112,9 +293,9 @@ schedulesAdd?.addEventListener('click', function(event) {
 // }
 
 // Dodaj obsługę zdarzenia "click" dla elementu infoText
-infoText?.addEventListener('click', function(event) {
-  addRecipes();
-});
+// infoText?.addEventListener('click', function(event) {
+//   addRecipes();
+// });
 
 
 //
