@@ -46,6 +46,8 @@ const Input3Warning = document.querySelector(".schedules_input3_warning");
 const editRecipes = document.querySelector('.app_container2')
 
 const Input4Warning = document.querySelector(".schedules_input4_warning");
+const recipesNameWarning = document.querySelector('.recipes_name_warning');
+const recipesDescriptionWarning = document.querySelector('.recipes_description_warning');
 
 
 
@@ -214,8 +216,6 @@ recipesHide?.addEventListener('click', function(event) {
 
     function saveRecipeValueToLocalStorage(newObject) {
 
-      const recipesNameWarning = document.querySelector('.recipes_name_warning');
-      const recipesDescriptionWarning = document.querySelector('.recipes_description_warning');
 
       if (recipeName.value === "" || recipeName.value.length > 50 || recipeDescription.value === "" || recipeDescription.value.length > 360) {
         // Jeśli któreś z pól jest niepoprawnie wypełnione, wykonaj odpowiednie akcje
@@ -307,6 +307,8 @@ recipesHide?.addEventListener('click', function(event) {
 // Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
     saveRecipe?.addEventListener('click', function(e) {
       e.preventDefault();
+      recipesNameWarning.style.display = "none";
+      recipesDescriptionWarning.style.display = "none";
       const newScheduleValue = {
         title: recipesInput.value,
         description: recipeDescription.value,
