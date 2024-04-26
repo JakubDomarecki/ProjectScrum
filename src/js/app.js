@@ -260,6 +260,8 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Zapisano: ', newScheduleValue);
       window.location.href = 'schedules.html'; // Przekierowanie do strony schedules.html
     });
+
+
   }
 });
 
