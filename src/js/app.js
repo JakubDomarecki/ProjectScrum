@@ -50,7 +50,7 @@ window.addEventListener('load', function() {
   }
 });
 // Zapisz wartość recipesInput.value do localStorage przy kliknięciu na pokazDashboard
-pokazDashboard.addEventListener("click", function(e){
+pokazDashboard?.addEventListener("click", function(e){
   if(recipesInput.value === "") {
     const errorMsg = document.getElementById('errorMsg').style.display = "block";
   } else {
