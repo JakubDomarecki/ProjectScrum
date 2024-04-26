@@ -444,27 +444,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//
-// // ściąganie informacji z select option
-// // Pobierz wszystkie elementy select w tabeli
-//
-// // let selectedOptionsValues = [];
-// //
-// // selects.forEach(select => {
-// //   const selectedOption = select.querySelector('option:checked');
-// //   if (selectedOption) {
-// //     selectedOptionsValues.push(selectedOption.value);
-// //   }
-// // });
-// //
-// // localStorage.setItem('selectedOptionsValues', JSON.stringify(selectedOptionsValues));
-//
-// // zamyka towrzenie planu i pokazuje liste
-// // SavePlan.addEventListener("click", function(e) {
-// //   scheduleList.classList.remove('new-plan-display-none');
-// //   newSchedule.classList.add('new-plan-display-none');
-// //
-// // });
+
+
+
 
 
 
