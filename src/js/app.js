@@ -7,7 +7,6 @@ const pokazGuziki = document.querySelector('#middle');
 const schowajWelcome = document.querySelector('#recipes_form');
 const warning = document.querySelector('.recipes_p');
 const recipesInput = document.querySelector('.recipes_input');
-const headerName = document.querySelector('.header_name');
 const prevBtn = document.querySelector('#prev__dni');
 const nextBtn = document.querySelector('#next__dni');
 const nrTyg = document.querySelector('#nr__tygodnia');
@@ -32,38 +31,36 @@ const newRecipePlace =document.querySelector('.instruction_list_ul');
 const newIngridientsPlace = document.querySelector('.ingridients__list_ul');
 const instructionsInput = document.querySelector('.instructions__input');
 const ingridientsInput = document.querySelector('.ingridients__input');
-const saveRecipe = document.querySelector('.togglerRecipes')
-const hideRecipeCreator = document.querySelector('.container__recipes')
-const tabela = document.querySelector('#recipeList')
-const recipeName = document.querySelector('.recipes_input')
-const recipeDescription = document.querySelector('.recipes_input2')
-const recipeInTable = document.querySelector('.newRecipe')
+const saveRecipe = document.querySelector('.togglerRecipes');
+const hideRecipeCreator = document.querySelector('.container__recipes');
+const tabela = document.querySelector('#recipeList');
+const recipeName = document.querySelector('.recipes_input');
+const recipeDescription = document.querySelector('.recipes_input2');
+const recipeInTable = document.querySelector('.newRecipe');
+const headerName = document.querySelector(".header_name");
 
 // logowanie //
-let savedName = localStorage.getItem('savedName');
-
-if (savedName) {
-  schowajWelcome?.classList.add('ukrtyeForm');
-  pokazGuziki?.classList.remove('ukryteMiddle');
-  headerName.innerText = savedName;
-} else {
-  warning.classList.remove('ukrtyeForm');
-}
-pokazDashboard?.addEventListener('click', function(event) {
-  const userName = recipesInput.value;
-
-  if (userName === '') {
-    warning.classList.remove('ukrtyeForm');
-  } else {
-
-    localStorage.setItem('savedName', userName);
-    savedName = userName;
-
-    schowajWelcome.classList.add('ukrtyeForm');
-    pokazGuziki.classList.remove('ukryteMiddle');
-    headerName.innerText = savedName;
+// Sprawda czy wartość jest już w localStorage i ustaia ją
+window.addEventListener('load', function() {
+  const savedValue = localStorage.getItem('recipesInputValue');
+  if (savedValue) {
+    headerName.innerText = savedValue;
+    schowajWelcome?.classList.add('ukrtyeForm');
+    pokazGuziki?.classList.remove('ukryteMiddle');
   }
 });
+// Zapisz wartość recipesInput.value do localStorage przy kliknięciu na pokazDashboard
+pokazDashboard?.addEventListener("click", function(e){
+  if(recipesInput.value === "") {
+    const errorMsg = document.getElementById('errorMsg').style.display = "block";
+  } else {
+    localStorage.setItem('recipesInputValue', recipesInput.value);
+    headerName.innerText = recipesInput.value;
+    schowajWelcome?.classList.add('ukrtyeForm');
+    pokazGuziki?.classList.remove('ukryteMiddle');
+  }
+});
+
 
 // pasek nawigacji, jak spada niżej to przestaje działać //
 document.addEventListener('DOMContentLoaded', function() {
