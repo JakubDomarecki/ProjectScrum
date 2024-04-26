@@ -39,6 +39,9 @@ const recipeName = document.querySelector('.recipes_input');
 const recipeDescription = document.querySelector('.recipes_input2');
 const recipeInTable = document.querySelector('.newRecipe');
 const headerName = document.querySelector(".header_name");
+const Input1Warning = document.querySelector(".schedules_input1_warning");
+const Input2Warning = document.querySelector(".schedules_input2_warning");
+const Input3Warning = document.querySelector(".schedules_input3_warning");
 
 
 // logowanie //
@@ -394,10 +397,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Zapisywanie planu do localStorage
     function saveScheduleValueToLocalStorage(newObject) {
-      const dataFromLocalStorage = JSON.parse(localStorage.getItem('schedules')) || [];
-      dataFromLocalStorage.push(newObject);
-      localStorage.setItem('schedules', JSON.stringify(dataFromLocalStorage));
-      alert('Plan zapisany do localStorage.');
+      const schedulesInput1 = document.querySelector(".schedules_input1");
+      const schedulesInput2 = document.querySelector(".schedules_input2");
+      const schedulesInput3 = document.querySelector(".schedules_input3");
+
+      if (schedulesInput1.value === "" || schedulesInput1.value.length > 50 || schedulesInput2.value === "" || schedulesInput2.value.length > 360 || addSchedulesNumber.value === "" || addSchedulesNumber.value < 1 || addSchedulesNumber.value > 52) {
+        // Jeśli któreś z pól jest niepoprawnie wypełnione, wykonaj odpowiednie akcje
+        if (schedulesInput1.value === "" || schedulesInput1.value.length > 50) {
+          Input1Warning.style.display = "block";
+        } else {
+          Input1Warning.style.display = "none";
+        }
+
+        if (schedulesInput2.value === "" || schedulesInput2.value.length > 360) {
+          Input2Warning.style.display = "block";
+        } else {
+          Input2Warning.style.display = "none";
+        }
+
+        if (schedulesInput3.value === "" || schedulesInput3.value < 1 || schedulesInput3.value > 52) {
+          Input3Warning.style.display = "block";
+        } else {
+          Input3Warning.style.display = "none";
+        }
+      } else {
+        // Jeśli wszystkie pola są poprawnie wypełnione, wykonaj odpowiednie akcje
+        const dataFromLocalStorage = JSON.parse(localStorage.getItem('schedules')) || [];
+        dataFromLocalStorage.push(newObject);
+        localStorage.setItem('schedules', JSON.stringify(dataFromLocalStorage));
+        alert('Plan zapisany do localStorage.');
+      }
     }
 
     // Ładowanie danych z localStorage i wyświetlanie ich w tabeli
@@ -463,6 +492,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dodanie obsługi zdarzenia dla przycisku "Zapisz i zamknij"
     addSchedulesSave?.addEventListener('click', function(e) {
       e.preventDefault();
+      Input1Warning.style.display = "none";
+      Input2Warning.style.display = "none";
+      Input3Warning.style.display = "none";
       const newScheduleValue = {
         title: addSchedulesTitle.value,
         description: addSchedulesDescription.value,
@@ -470,7 +502,7 @@ document.addEventListener('DOMContentLoaded', function() {
       };
       saveScheduleValueToLocalStorage(newScheduleValue);
       console.log('Zapisano: ', newScheduleValue);
-      window.location.href = 'schedules.html'; // Przekierowanie do strony schedules.html
+      // window.location.href = 'schedules.html'; // Przekierowanie do strony schedules.html
     });
 
 
