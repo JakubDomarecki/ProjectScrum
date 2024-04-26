@@ -46,8 +46,13 @@ const Input3Warning = document.querySelector(".schedules_input3_warning");
 const editRecipes = document.querySelector('.app_container2')
 
 const Input4Warning = document.querySelector(".schedules_input4_warning");
+
+const recipeEditPlace = document.querySelector('.instruction_list_ul2')
+const ingredtientsEditPlace = document.querySelector('.ingridients__list_ul2')
+
 const recipesNameWarning = document.querySelector('.recipes_name_warning');
 const recipesDescriptionWarning = document.querySelector('.recipes_description_warning');
+
 
 
 
@@ -196,6 +201,7 @@ addIngridientsToList.addEventListener('click', function (event){
 
 addRecipe.addEventListener('click', function (event) {
   addInstructions(newRecipePlace)
+  addInstructions()
   instructionsInput.value = ''
 
 
@@ -274,9 +280,12 @@ recipesHide?.addEventListener('click', function(event) {
         editButton.classList.add('button_edit');
         editButton.innerHTML = '<img class="icon__add--table" src=../icons/pen-to-square-solid.svg alt="Edit">';
         editButton.addEventListener('click', function() {
-          console.log(20)
+
           editRecipes.classList.toggle('ukryteMiddle')
           recipesOverlay.classList.toggle('ukryteMiddle')
+          console.log(newIngridientsPlace)
+          newRecipePlace.appendChild(recipeEditPlace)
+
 
         });
         // // Przycisk usuwania
@@ -312,7 +321,8 @@ recipesHide?.addEventListener('click', function(event) {
       const newScheduleValue = {
         title: recipesInput.value,
         description: recipeDescription.value,
-
+        instructions: newRecipePlace,
+        ingredients: newIngridientsPlace,
       };
       saveRecipeValueToLocalStorage(newScheduleValue);
       // window.location.href = 'recipes.html'; // Przekierowanie do strony recipe.html
