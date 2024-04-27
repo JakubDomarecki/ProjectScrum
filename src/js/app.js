@@ -516,6 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         dataFromLocalStorage.push(newObject);
         localStorage.setItem('schedules', JSON.stringify(dataFromLocalStorage));
+        alert('dodano plan');
       }
     }
 
@@ -587,6 +588,22 @@ document.addEventListener('DOMContentLoaded', function() {
       Input2Warning.style.display = 'none';
       Input3Warning.style.display = 'none';
       Input4Warning.style.display = 'none';
+      const foodSelects = document.querySelectorAll('.food');
+      let allFoodSelected = true;
+      foodSelects.forEach(select => {
+        if (select.value === '') {
+          allFoodSelected = false;
+          return;
+        }
+      });
+      foodSelects.forEach(select => {
+        if (select.value === '') {
+          select.classList.add('warning');
+        } else {
+          select.classList.remove('warning');
+        }
+      });
+
       const newScheduleValue = {
         title: addSchedulesTitle.value,
         description: addSchedulesDescription.value,
