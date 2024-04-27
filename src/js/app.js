@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
     function saveRecipeValueToLocalStorage(newObject) {
 
 
-      if (recipeName.value === '' || recipeName.value.length > 50 || recipeDescription.value === '' || recipeDescription.value.length > 360 || instructionsInput.value === '' || instructionsInput.value.length > 150 || ingridientsInput.value === '' || ingridientsInput.value.length > 50) {
+      if (recipeName.value === '' || recipeName.value.length > 50 || recipeDescription.value === '' || recipeDescription.value.length > 360 || instructionsInput.value.length > 150 || ingridientsInput.value.length > 50) {
         // Jeśli któreś z pól jest niepoprawnie wypełnione, wykonaj odpowiednie akcje
         if (recipeName.value === '' || recipeName.value.length > 50) {
           recipesNameWarning.style.display = 'block';
@@ -226,12 +226,12 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
         } else {
           recipesDescriptionWarning.style.display = 'none';
         }
-        if (instructionsInput.value === '' || instructionsInput.value > 150) {
+        if (instructionsInput.value.length > 150) {
           instructionsWarning.style.display = 'block';
         } else {
           instructionsWarning.style.display = 'none';
         }
-        if (ingridientsInput.value === '' || ingridientsInput.value > 50) {
+        if (ingridientsInput.value.length > 50) {
           ingridientsWarning.style.display = 'block';
         } else {
           ingridientsWarning.style.display = 'none';
