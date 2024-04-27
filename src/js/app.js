@@ -1,6 +1,6 @@
 const dodajPrzepis = document.querySelector('#left');
 // skomentowałem ten plan bo go nie używa, a wywołuje error na konsoli
-// const dodajPlan = document.querySelector('#right');
+const dodajPlan = document.querySelector('#right');
 const pokazPrzepis = document.querySelector('#przepis');
 const pokazPlan = document.querySelector('#plan');
 const pokazDashboard = document.querySelector('#recipes_button');
@@ -350,7 +350,6 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
 schedulesAdd?.addEventListener('click', function(event) {
   scheduleList?.classList.toggle('new-plan-display-none');
   newSchedule?.classList.toggle('new-plan-display-none');
-
 });
 
 
@@ -614,6 +613,13 @@ document.addEventListener('DOMContentLoaded', function() {
       // window.location.href = 'schedules.html'; // Przekierowanie do strony schedules.html
     });
   }
+});
+
+dodajPrzepis?.addEventListener('click', function(e) {
+  window.location.href = 'http://localhost:3000/recipes.html';
+});
+dodajPlan?.addEventListener('click', function(e) {
+  window.location.href = 'http://localhost:3000/schedules.html';
 });
 
 
