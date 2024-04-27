@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {  // Czy aktualny URL 
 
     addRecipe.addEventListener('click', function(event) {
       addInstructions(newRecipePlace);
-      addInstructions();
+
       instructionsInput.value = '';
 
 
