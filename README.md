@@ -1,5 +1,4 @@
 
-
 # ScrumLab
 
 ## Czym jest ScrumLab?
